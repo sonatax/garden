@@ -10,8 +10,11 @@
 #import "MPAnnotation.h"
 #import "UIImage+GIF.h"
 #import "UIImage+animatedGIF.h"
+#import "FTFoursquareEngine.h"
 
 @interface MPViewController ()
+
+@property (nonatomic, strong) YMKMapView *yMapView;
 
 @end
 
@@ -24,31 +27,28 @@
     
     // [Map]
     //YMKMapViewのインスタンスを作成
-    YMKMapView *map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 568) appid:@"dj0zaiZpPTIzMVdVRExhZVl5NCZzPWNvbnN1bWVyc2VjcmV0Jng9NDY-" ];
+    self.yMapView = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768) appid:@"dj0zaiZpPTIzMVdVRExhZVl5NCZzPWNvbnN1bWVyc2VjcmV0Jng9NDY-" ];
     //地図のタイプを指定
-    [map setMapType:YMKMapTypeStyle MapStyle:@"midnight" MapStyleParam:nil];
+    [self.yMapView setMapType:YMKMapTypeStyle MapStyle:@"midnight" MapStyleParam:nil];
     //YMKMapViewを追加
-    [self.view addSubview:map];
+    [self.view addSubview:self.yMapView];
     //YMKMapViewDelegateを登録
-    map.delegate = self;
+    self.yMapView.delegate = self;
     //地図の位置と縮尺を設定
-    CLLocationCoordinate2D center;
-    center.latitude = 35.6657214;
-    center.longitude = 139.7310058;
-    map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.01, 0.01));
+    CLLocationCoordinate2D currentCoordinate = CLLocationCoordinate2DMake(35.6657214, 139.7310058);
+    self.yMapView.region = YMKCoordinateRegionMake(currentCoordinate, YMKCoordinateSpanMake(0.01, 0.01));
     // [地図の反転]
-    map.transform = CGAffineTransformScale(map.transform, -1, 1);
+    self.yMapView.transform = CGAffineTransformScale(self.yMapView.transform, -1, 1);
 
     
-    // [Pin]
-    //アイコンの緯度経度を設定
-    CLLocationCoordinate2D coordinate;
-    coordinate.latitude = 35.665818701569016;
-    coordinate.longitude = 139.73087297164147;
-    //MyAnnotationの初期化
-    MPAnnotation *myAnnotation = [[MPAnnotation alloc] initWithLocationCoordinate:coordinate title:@"ミッドタウン" subtitle:@"ミッドタウンです。"];
-    //AnnotationをYMKMapViewに追加
-    [map addAnnotation:myAnnotation];
+    
+    
+    [AppDelegate.foursquareEngine venuesExploreWithCoordinate:currentCoordinate
+                                                    andRadius:2000
+                                                 onCompletion:^(FTFoursquareVenuesExplore *foursquareVenuesExplore) {
+                                                     [self addAnnotationsWithVenues:foursquareVenuesExplore.venues];
+                                                 } onError:^(NSError *error) {
+                                                 }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,6 +68,12 @@
         
         //アイコンイメージの変更
         pin.image=[UIImage imageNamed:@"point01"];
+//        NSString *imageUrl = [annotation.foursquareVenue.foursquarePhoto photoUrlWithWidth:30 andHeight:30];
+//        [AppDelegate.imageEngine imageAtURL:[NSURL URLWithString:imageUrl]
+//                          completionHandler:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
+//                              pin.image = fetchedImage;
+//                          } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+//                          }];
         //アイコンのイメージのどこを基準点にするか設定
         CGPoint centerOffset;
         centerOffset.x=15;
@@ -95,15 +101,64 @@
         animationScale.repeatCount = HUGE_VALF; // 繰り返し回数
         animationScale.autoreverses = YES; // アニメーション終了時に逆アニメーション
         // 拡大・縮小倍率を設定
-        animationScale.fromValue = [NSNumber numberWithFloat:0.2]; // 開始時の倍率
-        animationScale.toValue = [NSNumber numberWithFloat:0.5]; // 終了時の倍率
+        animationScale.fromValue = [NSNumber numberWithFloat:0.7]; // 開始時の倍率
+        animationScale.toValue = [NSNumber numberWithFloat:1.0]; // 終了時の倍率
         // アニメーションを追加
-        [pin.layer addAnimation:animationScale forKey:@"scale-layer"];
+//        [pin.layer addAnimation:animationScale forKey:@"scale-layer"];
+        
+        // [点滅アニメーション]
+        [pin.layer addAnimation:[self makeAnimation] forKey:@"blinkAnimation"];
         
         
         return pin;
     }
     return nil;
 }
+
+
+- (CAAnimationGroup *)makeAnimation
+{
+    CABasicAnimation *fadeAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeAnim.fromValue = [NSNumber numberWithFloat:1.0];
+    fadeAnim.toValue = [NSNumber numberWithFloat:0.0];
+    fadeAnim.duration = 1.2;
+    fadeAnim.fillMode = kCAFillModeForwards;
+    
+    CABasicAnimation *resizeAnim1 = [CABasicAnimation animationWithKeyPath:@"transform"];
+    resizeAnim1.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.1, 0.1, 0.0)];
+    resizeAnim1.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.5, 0.5, 0.0)];
+    resizeAnim1.duration = fadeAnim.duration;
+    resizeAnim1.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    resizeAnim1.fillMode = kCAFillModeForwards;
+    
+    CAAnimationGroup *group = [CAAnimationGroup animation];
+    group.fillMode = kCAFillModeForwards;
+    group.animations = @[fadeAnim, resizeAnim1];
+    group.duration = fadeAnim.duration;
+    group.delegate = self;
+    group.repeatCount = HUGE_VALF;
+    [group setValue:@"showThreadCreateButtonAnimation" forKey:@"animationName"];
+    
+    return group;
+    
+}
+
+- (void)addAnnotationsWithVenues:(NSArray *)venues
+{
+    for (FTFoursquareVenue *venue in venues) {
+        // [Pin]
+        //アイコンの緯度経度を設定
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(venue.foursquareLocation.lat, venue.foursquareLocation.lng);
+        //MyAnnotationの初期化
+        MPAnnotation *myAnnotation = [[MPAnnotation alloc] initWithLocationCoordinate:coordinate title:venue.name subtitle:venue.foursquareLocation.address];
+        myAnnotation.foursquareVenue = venue;
+        //AnnotationをYMKMapViewに追加
+        [self.yMapView addAnnotation:myAnnotation];
+
+    }
+    
+
+}
+
 
 @end

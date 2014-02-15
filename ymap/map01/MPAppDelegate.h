@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FTFoursquareEngine.h"
 
 @interface MPAppDelegate : UIResponder <UIApplicationDelegate>
 
+#define AppDelegate ((MPAppDelegate *)[UIApplication sharedApplication].delegate)
+
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) FTFoursquareEngine *foursquareEngine;
+@property (strong, nonatomic) MKNetworkEngine *imageEngine;
 
 @end
