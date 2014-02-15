@@ -12,6 +12,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.foursquareEngine = [[FTFoursquareEngine alloc] initWithHostName:@"api.foursquare.com"];
+    self.imageEngine = [MKNetworkEngine new];
+    [self.imageEngine useCache];
+    [UIImageView setDefaultEngine:self.imageEngine];
+
+    
     // Override point for customization after application launch.
     return YES;
 }

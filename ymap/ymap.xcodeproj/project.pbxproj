@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BCD0B1CF92E4346810596F5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC894F501D49EC920CDD43 /* libPods.a */; };
+		9CB338AD18AF957C00D5FF55 /* FTFoursquareCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338A418AF957C00D5FF55 /* FTFoursquareCategory.m */; };
+		9CB338AE18AF957C00D5FF55 /* FTFoursquareLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338A618AF957C00D5FF55 /* FTFoursquareLocation.m */; };
+		9CB338AF18AF957C00D5FF55 /* FTFoursquarePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338A818AF957C00D5FF55 /* FTFoursquarePhoto.m */; };
+		9CB338B018AF957C00D5FF55 /* FTFoursquareVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338AA18AF957C00D5FF55 /* FTFoursquareVenue.m */; };
+		9CB338B118AF957C00D5FF55 /* FTFoursquareVenuesExplore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338AC18AF957C00D5FF55 /* FTFoursquareVenuesExplore.m */; };
+		9CB338B418AF95E700D5FF55 /* FTFoursquareEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338B318AF95E700D5FF55 /* FTFoursquareEngine.m */; };
 		9CF2001A18AF402800F4DD4F /* MPAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF2001918AF402800F4DD4F /* MPAnnotation.m */; };
 		9CF2001F18AF46B400F4DD4F /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF2001E18AF46B400F4DD4F /* UIImage+GIF.m */; };
 		9CF2002118AF46CB00F4DD4F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF2002018AF46CB00F4DD4F /* ImageIO.framework */; };
@@ -68,6 +75,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9CB338A318AF957C00D5FF55 /* FTFoursquareCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareCategory.h; sourceTree = "<group>"; };
+		9CB338A418AF957C00D5FF55 /* FTFoursquareCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareCategory.m; sourceTree = "<group>"; };
+		9CB338A518AF957C00D5FF55 /* FTFoursquareLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareLocation.h; sourceTree = "<group>"; };
+		9CB338A618AF957C00D5FF55 /* FTFoursquareLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareLocation.m; sourceTree = "<group>"; };
+		9CB338A718AF957C00D5FF55 /* FTFoursquarePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquarePhoto.h; sourceTree = "<group>"; };
+		9CB338A818AF957C00D5FF55 /* FTFoursquarePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquarePhoto.m; sourceTree = "<group>"; };
+		9CB338A918AF957C00D5FF55 /* FTFoursquareVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareVenue.h; sourceTree = "<group>"; };
+		9CB338AA18AF957C00D5FF55 /* FTFoursquareVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareVenue.m; sourceTree = "<group>"; };
+		9CB338AB18AF957C00D5FF55 /* FTFoursquareVenuesExplore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareVenuesExplore.h; sourceTree = "<group>"; };
+		9CB338AC18AF957C00D5FF55 /* FTFoursquareVenuesExplore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareVenuesExplore.m; sourceTree = "<group>"; };
+		9CB338B218AF95E700D5FF55 /* FTFoursquareEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareEngine.h; sourceTree = "<group>"; };
+		9CB338B318AF95E700D5FF55 /* FTFoursquareEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareEngine.m; sourceTree = "<group>"; };
 		9CF2001818AF402800F4DD4F /* MPAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAnnotation.h; sourceTree = "<group>"; };
 		9CF2001918AF402800F4DD4F /* MPAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAnnotation.m; sourceTree = "<group>"; };
 		9CF2001D18AF46B400F4DD4F /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
@@ -124,6 +143,8 @@
 		9CF2FFB818AF369D00F4DD4F /* via.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = via.png; sourceTree = "<group>"; };
 		9CF2FFB918AF369D00F4DD4F /* via@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "via@2x.png"; sourceTree = "<group>"; };
 		9CF2FFBA18AF369D00F4DD4F /* yback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yback.png; sourceTree = "<group>"; };
+		E9D5B0C3265744EDAB2E1805 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FAEC894F501D49EC920CDD43 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +162,7 @@
 				9CF2FF6618AF32BC00F4DD4F /* UIKit.framework in Frameworks */,
 				9CF2002C18AF623E00F4DD4F /* YMapKit.framework in Frameworks */,
 				9CF2FF6218AF32BC00F4DD4F /* Foundation.framework in Frameworks */,
+				8BCD0B1CF92E4346810596F5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +179,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9CB3389218AF921700D5FF55 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9CB338B218AF95E700D5FF55 /* FTFoursquareEngine.h */,
+				9CB338B318AF95E700D5FF55 /* FTFoursquareEngine.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		9CB3389618AF930F00D5FF55 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CB338A318AF957C00D5FF55 /* FTFoursquareCategory.h */,
+				9CB338A418AF957C00D5FF55 /* FTFoursquareCategory.m */,
+				9CB338A518AF957C00D5FF55 /* FTFoursquareLocation.h */,
+				9CB338A618AF957C00D5FF55 /* FTFoursquareLocation.m */,
+				9CB338A718AF957C00D5FF55 /* FTFoursquarePhoto.h */,
+				9CB338A818AF957C00D5FF55 /* FTFoursquarePhoto.m */,
+				9CB338A918AF957C00D5FF55 /* FTFoursquareVenue.h */,
+				9CB338AA18AF957C00D5FF55 /* FTFoursquareVenue.m */,
+				9CB338AB18AF957C00D5FF55 /* FTFoursquareVenuesExplore.h */,
+				9CB338AC18AF957C00D5FF55 /* FTFoursquareVenuesExplore.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9CB3389D18AF93D900D5FF55 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				9CF2FF7318AF32BC00F4DD4F /* Main.storyboard */,
+				9CF2FF7918AF32BC00F4DD4F /* Images.xcassets */,
+			);
+			name = Interfaces;
+			sourceTree = "<group>";
+		};
+		9CB3389E18AF93EC00D5FF55 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				9CF2FF7018AF32BC00F4DD4F /* MPAppDelegate.h */,
+				9CF2FF7118AF32BC00F4DD4F /* MPAppDelegate.m */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		9CB3389F18AF93FC00D5FF55 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CF2FF7618AF32BC00F4DD4F /* MPViewController.h */,
+				9CF2FF7718AF32BC00F4DD4F /* MPViewController.m */,
+				9CF2001818AF402800F4DD4F /* MPAnnotation.h */,
+				9CF2001918AF402800F4DD4F /* MPAnnotation.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		9CF2001B18AF452900F4DD4F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +279,7 @@
 				9CF2FF8618AF32BC00F4DD4F /* ymapTests */,
 				9CF2FF6018AF32BC00F4DD4F /* Frameworks */,
 				9CF2FF5F18AF32BC00F4DD4F /* Products */,
+				E9D5B0C3265744EDAB2E1805 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,6 +306,7 @@
 				9CF2FF6318AF32BC00F4DD4F /* CoreGraphics.framework */,
 				9CF2FF6518AF32BC00F4DD4F /* UIKit.framework */,
 				9CF2FF8018AF32BC00F4DD4F /* XCTest.framework */,
+				FAEC894F501D49EC920CDD43 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -235,14 +314,11 @@
 		9CF2FF6718AF32BC00F4DD4F /* ymap */ = {
 			isa = PBXGroup;
 			children = (
-				9CF2FF7318AF32BC00F4DD4F /* Main.storyboard */,
-				9CF2FF7018AF32BC00F4DD4F /* MPAppDelegate.h */,
-				9CF2FF7118AF32BC00F4DD4F /* MPAppDelegate.m */,
-				9CF2FF7618AF32BC00F4DD4F /* MPViewController.h */,
-				9CF2FF7718AF32BC00F4DD4F /* MPViewController.m */,
-				9CF2001818AF402800F4DD4F /* MPAnnotation.h */,
-				9CF2001918AF402800F4DD4F /* MPAnnotation.m */,
-				9CF2FF7918AF32BC00F4DD4F /* Images.xcassets */,
+				9CB3389D18AF93D900D5FF55 /* Interfaces */,
+				9CB3389E18AF93EC00D5FF55 /* Global */,
+				9CB3389F18AF93FC00D5FF55 /* View */,
+				9CB3389218AF921700D5FF55 /* Network */,
+				9CB3389618AF930F00D5FF55 /* Model */,
 				9CF2FF6818AF32BC00F4DD4F /* Supporting Files */,
 			);
 			name = ymap;
@@ -325,9 +401,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CF2FF9018AF32BC00F4DD4F /* Build configuration list for PBXNativeTarget "ymap" */;
 			buildPhases = (
+				7672D5DEDDBA4C98AED8BDC2 /* Check Pods Manifest.lock */,
 				9CF2FF5A18AF32BC00F4DD4F /* Sources */,
 				9CF2FF5B18AF32BC00F4DD4F /* Frameworks */,
 				9CF2FF5C18AF32BC00F4DD4F /* Resources */,
+				25D8534DC9DE48A5804E4165 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -435,16 +513,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25D8534DC9DE48A5804E4165 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7672D5DEDDBA4C98AED8BDC2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9CF2FF5A18AF32BC00F4DD4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB338B418AF95E700D5FF55 /* FTFoursquareEngine.m in Sources */,
+				9CB338AE18AF957C00D5FF55 /* FTFoursquareLocation.m in Sources */,
+				9CB338B118AF957C00D5FF55 /* FTFoursquareVenuesExplore.m in Sources */,
 				9CF2FF6E18AF32BC00F4DD4F /* main.m in Sources */,
 				9CF2002818AF4AED00F4DD4F /* UIImage+animatedGIF.m in Sources */,
 				9CF2001A18AF402800F4DD4F /* MPAnnotation.m in Sources */,
 				9CF2FF7818AF32BC00F4DD4F /* MPViewController.m in Sources */,
 				9CF2001F18AF46B400F4DD4F /* UIImage+GIF.m in Sources */,
+				9CB338B018AF957C00D5FF55 /* FTFoursquareVenue.m in Sources */,
+				9CB338AF18AF957C00D5FF55 /* FTFoursquarePhoto.m in Sources */,
+				9CB338AD18AF957C00D5FF55 /* FTFoursquareCategory.m in Sources */,
 				9CF2FF7218AF32BC00F4DD4F /* MPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,7 +616,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -531,6 +648,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -538,7 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -564,11 +682,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
 		9CF2FF9118AF32BC00F4DD4F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9D5B0C3265744EDAB2E1805 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -581,13 +701,14 @@
 				INFOPLIST_FILE = "map01/ymap-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ymap;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		9CF2FF9218AF32BC00F4DD4F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9D5B0C3265744EDAB2E1805 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -600,7 +721,7 @@
 				INFOPLIST_FILE = "map01/ymap-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ymap;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
