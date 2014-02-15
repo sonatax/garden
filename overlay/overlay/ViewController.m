@@ -12,11 +12,13 @@
 #import "ViewController.h"
 #import "MCSender.h"
 #import "TileView.h"
+#import <YMapKit/YMapKit.h>
 
-@interface ViewController () <MCSenderDelegate, UIScrollViewDelegate>
+@interface ViewController () <MCSenderDelegate, UIScrollViewDelegate, YMKMapViewDelegate>
 
 @property MCSender *sender;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) YMKMapView *yMapView;
 
 @property TileView *tile;
 @end
@@ -34,14 +36,31 @@
     [_sender start];
 
     // タイル生成 ここ参考にさせていただいた http://d.hatena.ne.jp/KishikawaKatsumi/20090429/1241020420
-    _tile = [[TileView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 3000.0f, 3000.0f)]; // 全体サイズ
-	_tile.tiledLayer.tileSize = CGSizeMake(200.0f, 200.0f); // タイルサイズ
-	_tile.tiledLayer.levelsOfDetail = 1;
-	_tile.tiledLayer.levelsOfDetailBias = 0;
+//    _tile = [[TileView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 3000.0f, 3000.0f)]; // 全体サイズ
+//	_tile.tiledLayer.tileSize = CGSizeMake(200.0f, 200.0f); // タイルサイズ
+//	_tile.tiledLayer.levelsOfDetail = 1;
+//	_tile.tiledLayer.levelsOfDetailBias = 0;
+//
+//    _scrollView.delegate = self;
+//    [_scrollView addSubview:_tile];
+//    _scrollView.contentSize = _tile.bounds.size;
+    
+    
+    // [地図の追加]
+    //YMKMapViewのインスタンスを作成
+    self.yMapView = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 568) appid:@"dj0zaiZpPTIzMVdVRExhZVl5NCZzPWNvbnN1bWVyc2VjcmV0Jng9NDY-" ];
+    //地図のタイプを指定
+    [self.yMapView setMapType:YMKMapTypeStyle MapStyle:@"midnight" MapStyleParam:nil];
+    //YMKMapViewを追加
+    [self.view addSubview:self.yMapView];
+    //YMKMapViewDelegateを登録
+    self.yMapView.delegate = self;
+    //地図の位置と縮尺を設定
+    CLLocationCoordinate2D currentCoordinate = CLLocationCoordinate2DMake(35.6657214, 139.7310058);
+    self.yMapView.region = YMKCoordinateRegionMake(currentCoordinate, YMKCoordinateSpanMake(0.01, 0.01));
+    // [地図の反転]
+//    self.yMapView.transform = CGAffineTransformScale(self.yMapView.transform, -1, 1);
 
-    _scrollView.delegate = self;
-    [_scrollView addSubview:_tile];
-    _scrollView.contentSize = _tile.bounds.size;
 }
 
 - (void)didReceiveMemoryWarning
