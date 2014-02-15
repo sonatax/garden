@@ -22,6 +22,7 @@
 		8CDEC8E118AF33FC00EBBCD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CDEC8DF18AF33FC00EBBCD3 /* InfoPlist.strings */; };
 		8CDEC8E318AF33FC00EBBCD3 /* backgroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEC8E218AF33FC00EBBCD3 /* backgroundTests.m */; };
 		8CDEC93018AF34E200EBBCD3 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC92F18AF34E200EBBCD3 /* MultipeerConnectivity.framework */; };
+		8CDEC93918AF381200EBBCD3 /* MCReceive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEC93818AF381200EBBCD3 /* MCReceive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		8CDEC8E018AF33FC00EBBCD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8CDEC8E218AF33FC00EBBCD3 /* backgroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = backgroundTests.m; sourceTree = "<group>"; };
 		8CDEC92F18AF34E200EBBCD3 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		8CDEC93718AF381200EBBCD3 /* MCReceive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCReceive.h; sourceTree = "<group>"; };
+		8CDEC93818AF381200EBBCD3 /* MCReceive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCReceive.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				8CDEC8CD18AF33FC00EBBCD3 /* ViewController.m */,
 				8CDEC8CF18AF33FC00EBBCD3 /* Images.xcassets */,
 				8CDEC8BE18AF33FC00EBBCD3 /* Supporting Files */,
+				8CDEC93718AF381200EBBCD3 /* MCReceive.h */,
+				8CDEC93818AF381200EBBCD3 /* MCReceive.m */,
 			);
 			path = background;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CDEC8CE18AF33FC00EBBCD3 /* ViewController.m in Sources */,
+				8CDEC93918AF381200EBBCD3 /* MCReceive.m in Sources */,
 				8CDEC8C818AF33FC00EBBCD3 /* AppDelegate.m in Sources */,
 				8CDEC8C418AF33FC00EBBCD3 /* main.m in Sources */,
 			);
@@ -464,6 +470,7 @@
 				8CDEC8E818AF33FC00EBBCD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CDEC8E918AF33FC00EBBCD3 /* Build configuration list for PBXNativeTarget "backgroundTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +479,7 @@
 				8CDEC8EB18AF33FC00EBBCD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

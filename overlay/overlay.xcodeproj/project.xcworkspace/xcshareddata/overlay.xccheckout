@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C98729AD-575B-4CC1-86CF-59E02573EB9E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>overlay</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5CC69F34-A1A1-4EB4-B3E8-5C8B196D7999</key>
+		<string>ssh://github.com/sonatax/garden.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>overlay/overlay.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5CC69F34-A1A1-4EB4-B3E8-5C8B196D7999</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/sonatax/garden.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5CC69F34-A1A1-4EB4-B3E8-5C8B196D7999</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5CC69F34-A1A1-4EB4-B3E8-5C8B196D7999</string>
+			<key>IDESourceControlWCCName</key>
+			<string>garden</string>
+		</dict>
+	</array>
+</dict>
+</plist>
