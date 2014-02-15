@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "MCReceiver.h"
 
 @interface ViewController ()
-
+@property MCReceiver *receiver;
 @end
 
 @implementation ViewController
@@ -18,6 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    _receiver = [MCReceiver new];
+    //    _sender.delegate = self;
+    [_receiver start];
 }
 
 - (void)didReceiveMemoryWarning

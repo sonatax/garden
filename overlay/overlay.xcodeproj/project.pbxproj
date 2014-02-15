@@ -22,7 +22,7 @@
 		8CDEC92218AF34AB00EBBCD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CDEC92018AF34AB00EBBCD3 /* InfoPlist.strings */; };
 		8CDEC92418AF34AB00EBBCD3 /* overlayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEC92318AF34AB00EBBCD3 /* overlayTests.m */; };
 		8CDEC92E18AF34D100EBBCD3 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC92D18AF34D100EBBCD3 /* MultipeerConnectivity.framework */; };
-		8CDEC93618AF375900EBBCD3 /* MCSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEC93518AF375900EBBCD3 /* MCSend.m */; };
+		8CDEC93618AF375900EBBCD3 /* MCSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEC93518AF375900EBBCD3 /* MCSender.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +56,8 @@
 		8CDEC92118AF34AB00EBBCD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8CDEC92318AF34AB00EBBCD3 /* overlayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = overlayTests.m; sourceTree = "<group>"; };
 		8CDEC92D18AF34D100EBBCD3 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
-		8CDEC93418AF375900EBBCD3 /* MCSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSend.h; path = overlay/MCSend.h; sourceTree = "<group>"; };
-		8CDEC93518AF375900EBBCD3 /* MCSend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSend.m; path = overlay/MCSend.m; sourceTree = "<group>"; };
+		8CDEC93418AF375900EBBCD3 /* MCSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSender.h; sourceTree = "<group>"; };
+		8CDEC93518AF375900EBBCD3 /* MCSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSender.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +88,6 @@
 		8CDEC8EC18AF34AB00EBBCD3 = {
 			isa = PBXGroup;
 			children = (
-				8CDEC93418AF375900EBBCD3 /* MCSend.h */,
-				8CDEC93518AF375900EBBCD3 /* MCSend.m */,
 				8CDEC8FE18AF34AB00EBBCD3 /* overlay */,
 				8CDEC91D18AF34AB00EBBCD3 /* overlayTests */,
 				8CDEC8F718AF34AB00EBBCD3 /* Frameworks */,
@@ -126,6 +124,8 @@
 				8CDEC90A18AF34AB00EBBCD3 /* Main.storyboard */,
 				8CDEC90D18AF34AB00EBBCD3 /* ViewController.h */,
 				8CDEC90E18AF34AB00EBBCD3 /* ViewController.m */,
+				8CDEC93418AF375900EBBCD3 /* MCSender.h */,
+				8CDEC93518AF375900EBBCD3 /* MCSender.m */,
 				8CDEC91018AF34AB00EBBCD3 /* Images.xcassets */,
 				8CDEC8FF18AF34AB00EBBCD3 /* Supporting Files */,
 			);
@@ -259,7 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CDEC90F18AF34AB00EBBCD3 /* ViewController.m in Sources */,
-				8CDEC93618AF375900EBBCD3 /* MCSend.m in Sources */,
+				8CDEC93618AF375900EBBCD3 /* MCSender.m in Sources */,
 				8CDEC90918AF34AB00EBBCD3 /* AppDelegate.m in Sources */,
 				8CDEC90518AF34AB00EBBCD3 /* main.m in Sources */,
 			);

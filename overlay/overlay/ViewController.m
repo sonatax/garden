@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "MCSender.h"
 
 @interface ViewController ()
-
+@property MCSender *sender;
 @end
 
 @implementation ViewController
@@ -18,6 +19,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    _sender = [MCSender new];
+//    _sender.delegate = self;
+    [_sender start];
+    
 }
 
 - (void)didReceiveMemoryWarning
