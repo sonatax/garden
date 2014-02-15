@@ -30,10 +30,10 @@
     _mcAdvertiser.delegate = self;
     [_mcAdvertiser startAdvertisingPeer];
     
-    // delegateに通知
-//    if ([self.delegate respondsToSelector:@selector(didStart)]) {
-//        [self.delegate didStart];
-//    }
+    // delegateに、起動したよ通知
+    if ([self.delegate respondsToSelector:@selector(didStart)]) {
+        [self.delegate didStart];
+    }
 }
 
 - (void)stop {
@@ -42,10 +42,10 @@
     _mcAdvertiser = nil;
     _mcSession    = nil;
     
-    // delegateに通知
-//    if ([self.delegate respondsToSelector:@selector(didStop)]) {
-//        [self.delegate didStop];
-//    }
+    // delegateに、終了したよ通知
+    if ([self.delegate respondsToSelector:@selector(didStop)]) {
+        [self.delegate didStop];
+    }
 }
 
 #pragma mark - MCNearbyServiceAdvertiser（他者から見つけてもらうための道具）
@@ -77,10 +77,23 @@
             break;
         case MCSessionStateConnected:
             NSLog(@"接続完了 : %@", peerID.displayName);
+            // delegateに、つながったよ通知
+            if ([self.delegate respondsToSelector:@selector(didConnected)]) {
+                dispatch_async(dispatch_get_main_queue(),^{
+                    [self.delegate didConnected];
+                });
+            }
 			break;
         case MCSessionStateNotConnected:
             NSLog(@"切断完了 : %@", peerID.displayName);
+            // delegateに、切れちゃったよ通知
+            if ([self.delegate respondsToSelector:@selector(didLostConnection)]) {
+                dispatch_async(dispatch_get_main_queue(),^{
+                    [self.delegate didLostConnection];
+                });
+            }
 			break;
+
         default:
             NSLog(@"その他(state=%d) : %@", (int)state, peerID.displayName);
 			break;
@@ -93,11 +106,16 @@
        fromPeer:(MCPeerID *)peerID
 {
     NSMutableDictionary *params = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    NSLog(@"%s %@から受信 : %@", __PRETTY_FUNCTION__, peerID.displayName, params);
- 
-//    if ([self.delegate respondsToSelector:@selector(didReceiveData:)]) {
-//        [self.delegate didReceiveData:params];
-//    }
+    NSLog(@"%s %@から受信 : %@", __PRETTY_FUNCTION__, peerID.displayName, params); 
+
+    // delegateに、なんかデータが届いたよ通知
+    // ここのコール元が別スレッドのようで、通知先でのUI更新などに数秒規模のタイムラグが発生する。回避策として、メインスレッドに対して通知。
+    if ([self.delegate respondsToSelector:@selector(didReceive:)]) {
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self.delegate didReceive:params];
+        });
+
+    }
 }
 
 // 接続相手からデータを受け取ったとき

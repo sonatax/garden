@@ -30,10 +30,10 @@
     _mcBrowser.delegate = self;
     [_mcBrowser startBrowsingForPeers];
     
-    // delegateに通知
-//    if ([self.delegate respondsToSelector:@selector(didStart)]) {
-//        [self.delegate didStart];
-//    }
+    // delegateに、起動したよ通知
+    if ([self.delegate respondsToSelector:@selector(didStart)]) {
+        [self.delegate didStart];
+    }
 }
 
 - (void)stop {
@@ -42,18 +42,19 @@
     _mcBrowser    = nil;
     _mcSession    = nil;
     
-    // delegateに通知
-//    if ([self.delegate respondsToSelector:@selector(didStop)]) {
-//        [self.delegate didStop];
-//    }
+    // delegateに、終了したよ通知
+    if ([self.delegate respondsToSelector:@selector(didStop)]) {
+        [self.delegate didStop];
+    }
 }
 
 - (void)send:(NSDictionary *)params;
 {
+    NSLog(@"送ります: %@", params);
     [_mcSession sendData:[NSKeyedArchiver archivedDataWithRootObject:params]
                  toPeers:_mcSession.connectedPeers    // 接続中の相手全てに対して送る
-//              withMode:MCSessionSendDataReliable    // キューに登録し確実に届くモード
-                withMode:MCSessionSendDataUnreliable  // 即時、ただし確実に届くとは限らないモード
+                withMode:MCSessionSendDataReliable    // キューに登録し確実に届くモード
+//              withMode:MCSessionSendDataUnreliable  // 即時、ただし確実に届くとは限らないモード
                    error:nil];
 }
 
@@ -92,10 +93,18 @@
         case MCSessionStateConnecting:
             break;
         case MCSessionStateConnected:
-            NSLog(@"接続完了 : %@", peerID.displayName);
+            // NSLog(@"接続完了 : %@", peerID.displayName);
+            // delegateに、つながったよ通知
+            if ([self.delegate respondsToSelector:@selector(didConnected)]) {
+                [self.delegate didConnected];
+            }
 			break;
         case MCSessionStateNotConnected:
-            NSLog(@"切断完了 : %@", peerID.displayName);
+            // NSLog(@"切断完了 : %@", peerID.displayName);
+            // delegateに、切れちゃったよ通知
+            if ([self.delegate respondsToSelector:@selector(didLostConnection)]) {
+                [self.delegate didLostConnection];
+            }
 			break;
         default:
             NSLog(@"その他(state=%d) : %@", (int)state, peerID.displayName);
@@ -138,9 +147,6 @@ didFinishReceivingResourceWithName:(NSString *)resourceName
 {
     // nothing to do
 }
-
-
-
 
 
 @end
