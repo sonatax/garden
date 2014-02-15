@@ -1,6 +1,6 @@
 //
 //  MPAppDelegate.h
-//  map01
+//  ymap
 //
 //  Created by mee on 2/15/14.
 //  Copyright (c) 2014 synboo. All rights reserved.

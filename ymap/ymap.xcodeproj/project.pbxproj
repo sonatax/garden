@@ -13,6 +13,7 @@
 		9CF2002418AF47BC00F4DD4F /* test-animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9CF2002318AF47BC00F4DD4F /* test-animation.gif */; };
 		9CF2002818AF4AED00F4DD4F /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF2002718AF4AED00F4DD4F /* UIImage+animatedGIF.m */; };
 		9CF2002A18AF5AFA00F4DD4F /* point01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF2002918AF5AFA00F4DD4F /* point01@2x.png */; };
+		9CF2002C18AF623E00F4DD4F /* YMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF2002B18AF623E00F4DD4F /* YMapKit.framework */; };
 		9CF2FF6218AF32BC00F4DD4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF2FF6118AF32BC00F4DD4F /* Foundation.framework */; };
 		9CF2FF6418AF32BC00F4DD4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF2FF6318AF32BC00F4DD4F /* CoreGraphics.framework */; };
 		9CF2FF6618AF32BC00F4DD4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF2FF6518AF32BC00F4DD4F /* UIKit.framework */; };
@@ -32,7 +33,6 @@
 		9CF2FF9B18AF35C000F4DD4F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF2FF9A18AF35C000F4DD4F /* OpenGLES.framework */; };
 		9CF2FF9D18AF35CE00F4DD4F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF2FF9C18AF35CE00F4DD4F /* QuartzCore.framework */; };
 		9CF2FF9F18AF35DB00F4DD4F /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF2FF9E18AF35DB00F4DD4F /* libxml2.2.dylib */; };
-		9CF2FFA218AF364F00F4DD4F /* YMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF2FFA118AF364F00F4DD4F /* YMapKit.framework */; };
 		9CF2FFBB18AF369D00F4DD4F /* compass48.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF2FFA518AF369D00F4DD4F /* compass48.png */; };
 		9CF2FFBC18AF369D00F4DD4F /* compass48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF2FFA618AF369D00F4DD4F /* compass48@2x.png */; };
 		9CF2FFBD18AF369D00F4DD4F /* goal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF2FFA718AF369D00F4DD4F /* goal.png */; };
@@ -77,23 +77,24 @@
 		9CF2002618AF4AED00F4DD4F /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		9CF2002718AF4AED00F4DD4F /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		9CF2002918AF5AFA00F4DD4F /* point01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point01@2x.png"; sourceTree = "<group>"; };
-		9CF2FF5E18AF32BC00F4DD4F /* map01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = map01.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF2002B18AF623E00F4DD4F /* YMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YMapKit.framework; sourceTree = "<group>"; };
+		9CF2FF5E18AF32BC00F4DD4F /* ymap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ymap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF2FF6118AF32BC00F4DD4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9CF2FF6318AF32BC00F4DD4F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9CF2FF6518AF32BC00F4DD4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9CF2FF6918AF32BC00F4DD4F /* map01-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "map01-Info.plist"; sourceTree = "<group>"; };
+		9CF2FF6918AF32BC00F4DD4F /* ymap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ymap-Info.plist"; sourceTree = "<group>"; };
 		9CF2FF6B18AF32BC00F4DD4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9CF2FF6D18AF32BC00F4DD4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9CF2FF6F18AF32BC00F4DD4F /* map01-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "map01-Prefix.pch"; sourceTree = "<group>"; };
+		9CF2FF6F18AF32BC00F4DD4F /* ymap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ymap-Prefix.pch"; sourceTree = "<group>"; };
 		9CF2FF7018AF32BC00F4DD4F /* MPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAppDelegate.h; sourceTree = "<group>"; };
 		9CF2FF7118AF32BC00F4DD4F /* MPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAppDelegate.m; sourceTree = "<group>"; };
 		9CF2FF7418AF32BC00F4DD4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CF2FF7618AF32BC00F4DD4F /* MPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPViewController.h; sourceTree = "<group>"; };
 		9CF2FF7718AF32BC00F4DD4F /* MPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPViewController.m; sourceTree = "<group>"; };
 		9CF2FF7918AF32BC00F4DD4F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9CF2FF7F18AF32BC00F4DD4F /* map01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = map01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF2FF7F18AF32BC00F4DD4F /* ymapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ymapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF2FF8018AF32BC00F4DD4F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9CF2FF8818AF32BC00F4DD4F /* map01Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "map01Tests-Info.plist"; sourceTree = "<group>"; };
+		9CF2FF8818AF32BC00F4DD4F /* ymapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ymapTests-Info.plist"; sourceTree = "<group>"; };
 		9CF2FF8A18AF32BC00F4DD4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9CF2FF8C18AF32BC00F4DD4F /* map01Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = map01Tests.m; sourceTree = "<group>"; };
 		9CF2FF9618AF359B00F4DD4F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -101,7 +102,6 @@
 		9CF2FF9A18AF35C000F4DD4F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		9CF2FF9C18AF35CE00F4DD4F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9CF2FF9E18AF35DB00F4DD4F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		9CF2FFA118AF364F00F4DD4F /* YMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YMapKit.framework; sourceTree = "<group>"; };
 		9CF2FFA518AF369D00F4DD4F /* compass48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass48.png; sourceTree = "<group>"; };
 		9CF2FFA618AF369D00F4DD4F /* compass48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compass48@2x.png"; sourceTree = "<group>"; };
 		9CF2FFA718AF369D00F4DD4F /* goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goal.png; sourceTree = "<group>"; };
@@ -133,13 +133,13 @@
 			files = (
 				9CF2002118AF46CB00F4DD4F /* ImageIO.framework in Frameworks */,
 				9CF2FF9F18AF35DB00F4DD4F /* libxml2.2.dylib in Frameworks */,
-				9CF2FFA218AF364F00F4DD4F /* YMapKit.framework in Frameworks */,
 				9CF2FF9D18AF35CE00F4DD4F /* QuartzCore.framework in Frameworks */,
 				9CF2FF9B18AF35C000F4DD4F /* OpenGLES.framework in Frameworks */,
 				9CF2FF9918AF35B300F4DD4F /* SystemConfiguration.framework in Frameworks */,
 				9CF2FF9718AF359B00F4DD4F /* CoreLocation.framework in Frameworks */,
 				9CF2FF6418AF32BC00F4DD4F /* CoreGraphics.framework in Frameworks */,
 				9CF2FF6618AF32BC00F4DD4F /* UIKit.framework in Frameworks */,
+				9CF2002C18AF623E00F4DD4F /* YMapKit.framework in Frameworks */,
 				9CF2FF6218AF32BC00F4DD4F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,10 +196,10 @@
 		9CF2FF5518AF32BC00F4DD4F = {
 			isa = PBXGroup;
 			children = (
-				9CF2FF6718AF32BC00F4DD4F /* map01 */,
+				9CF2FF6718AF32BC00F4DD4F /* ymap */,
 				9CF2FFA318AF368800F4DD4F /* Images */,
 				9CF2001B18AF452900F4DD4F /* Libraries */,
-				9CF2FF8618AF32BC00F4DD4F /* map01Tests */,
+				9CF2FF8618AF32BC00F4DD4F /* ymapTests */,
 				9CF2FF6018AF32BC00F4DD4F /* Frameworks */,
 				9CF2FF5F18AF32BC00F4DD4F /* Products */,
 			);
@@ -208,8 +208,8 @@
 		9CF2FF5F18AF32BC00F4DD4F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9CF2FF5E18AF32BC00F4DD4F /* map01.app */,
-				9CF2FF7F18AF32BC00F4DD4F /* map01Tests.xctest */,
+				9CF2FF5E18AF32BC00F4DD4F /* ymap.app */,
+				9CF2FF7F18AF32BC00F4DD4F /* ymapTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,8 +217,8 @@
 		9CF2FF6018AF32BC00F4DD4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CF2002B18AF623E00F4DD4F /* YMapKit.framework */,
 				9CF2002018AF46CB00F4DD4F /* ImageIO.framework */,
-				9CF2FFA118AF364F00F4DD4F /* YMapKit.framework */,
 				9CF2FF9E18AF35DB00F4DD4F /* libxml2.2.dylib */,
 				9CF2FF9C18AF35CE00F4DD4F /* QuartzCore.framework */,
 				9CF2FF9A18AF35C000F4DD4F /* OpenGLES.framework */,
@@ -232,7 +232,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9CF2FF6718AF32BC00F4DD4F /* map01 */ = {
+		9CF2FF6718AF32BC00F4DD4F /* ymap */ = {
 			isa = PBXGroup;
 			children = (
 				9CF2FF7318AF32BC00F4DD4F /* Main.storyboard */,
@@ -245,33 +245,35 @@
 				9CF2FF7918AF32BC00F4DD4F /* Images.xcassets */,
 				9CF2FF6818AF32BC00F4DD4F /* Supporting Files */,
 			);
+			name = ymap;
 			path = map01;
 			sourceTree = "<group>";
 		};
 		9CF2FF6818AF32BC00F4DD4F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9CF2FF6918AF32BC00F4DD4F /* map01-Info.plist */,
+				9CF2FF6918AF32BC00F4DD4F /* ymap-Info.plist */,
 				9CF2FF6A18AF32BC00F4DD4F /* InfoPlist.strings */,
 				9CF2FF6D18AF32BC00F4DD4F /* main.m */,
-				9CF2FF6F18AF32BC00F4DD4F /* map01-Prefix.pch */,
+				9CF2FF6F18AF32BC00F4DD4F /* ymap-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9CF2FF8618AF32BC00F4DD4F /* map01Tests */ = {
+		9CF2FF8618AF32BC00F4DD4F /* ymapTests */ = {
 			isa = PBXGroup;
 			children = (
 				9CF2FF8C18AF32BC00F4DD4F /* map01Tests.m */,
 				9CF2FF8718AF32BC00F4DD4F /* Supporting Files */,
 			);
+			name = ymapTests;
 			path = map01Tests;
 			sourceTree = "<group>";
 		};
 		9CF2FF8718AF32BC00F4DD4F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9CF2FF8818AF32BC00F4DD4F /* map01Tests-Info.plist */,
+				9CF2FF8818AF32BC00F4DD4F /* ymapTests-Info.plist */,
 				9CF2FF8918AF32BC00F4DD4F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -319,9 +321,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9CF2FF5D18AF32BC00F4DD4F /* map01 */ = {
+		9CF2FF5D18AF32BC00F4DD4F /* ymap */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9CF2FF9018AF32BC00F4DD4F /* Build configuration list for PBXNativeTarget "map01" */;
+			buildConfigurationList = 9CF2FF9018AF32BC00F4DD4F /* Build configuration list for PBXNativeTarget "ymap" */;
 			buildPhases = (
 				9CF2FF5A18AF32BC00F4DD4F /* Sources */,
 				9CF2FF5B18AF32BC00F4DD4F /* Frameworks */,
@@ -331,14 +333,14 @@
 			);
 			dependencies = (
 			);
-			name = map01;
+			name = ymap;
 			productName = map01;
-			productReference = 9CF2FF5E18AF32BC00F4DD4F /* map01.app */;
+			productReference = 9CF2FF5E18AF32BC00F4DD4F /* ymap.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9CF2FF7E18AF32BC00F4DD4F /* map01Tests */ = {
+		9CF2FF7E18AF32BC00F4DD4F /* ymapTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9CF2FF9318AF32BC00F4DD4F /* Build configuration list for PBXNativeTarget "map01Tests" */;
+			buildConfigurationList = 9CF2FF9318AF32BC00F4DD4F /* Build configuration list for PBXNativeTarget "ymapTests" */;
 			buildPhases = (
 				9CF2FF7B18AF32BC00F4DD4F /* Sources */,
 				9CF2FF7C18AF32BC00F4DD4F /* Frameworks */,
@@ -349,9 +351,9 @@
 			dependencies = (
 				9CF2FF8518AF32BC00F4DD4F /* PBXTargetDependency */,
 			);
-			name = map01Tests;
+			name = ymapTests;
 			productName = map01Tests;
-			productReference = 9CF2FF7F18AF32BC00F4DD4F /* map01Tests.xctest */;
+			productReference = 9CF2FF7F18AF32BC00F4DD4F /* ymapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -369,7 +371,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9CF2FF5918AF32BC00F4DD4F /* Build configuration list for PBXProject "map01" */;
+			buildConfigurationList = 9CF2FF5918AF32BC00F4DD4F /* Build configuration list for PBXProject "ymap" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -382,8 +384,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9CF2FF5D18AF32BC00F4DD4F /* map01 */,
-				9CF2FF7E18AF32BC00F4DD4F /* map01Tests */,
+				9CF2FF5D18AF32BC00F4DD4F /* ymap */,
+				9CF2FF7E18AF32BC00F4DD4F /* ymapTests */,
 			);
 		};
 /* End PBXProject section */
@@ -460,7 +462,7 @@
 /* Begin PBXTargetDependency section */
 		9CF2FF8518AF32BC00F4DD4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9CF2FF5D18AF32BC00F4DD4F /* map01 */;
+			target = 9CF2FF5D18AF32BC00F4DD4F /* ymap */;
 			targetProxy = 9CF2FF8418AF32BC00F4DD4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -572,13 +574,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/mee/Downloads/map01,
+					/Users/mee/Dropbox/git/garden/ymap,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "map01/map01-Prefix.pch";
-				INFOPLIST_FILE = "map01/map01-Info.plist";
+				GCC_PREFIX_HEADER = "map01/ymap-Prefix.pch";
+				INFOPLIST_FILE = "map01/ymap-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ymap;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -591,13 +593,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/mee/Downloads/map01,
+					/Users/mee/Dropbox/git/garden/ymap,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "map01/map01-Prefix.pch";
-				INFOPLIST_FILE = "map01/map01-Info.plist";
+				GCC_PREFIX_HEADER = "map01/ymap-Prefix.pch";
+				INFOPLIST_FILE = "map01/ymap-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ymap;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -619,8 +621,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "map01Tests/map01Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "map01Tests/ymapTests-Info.plist";
+				PRODUCT_NAME = ymapTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -638,8 +640,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "map01/map01-Prefix.pch";
-				INFOPLIST_FILE = "map01Tests/map01Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "map01Tests/ymapTests-Info.plist";
+				PRODUCT_NAME = ymapTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -648,7 +650,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9CF2FF5918AF32BC00F4DD4F /* Build configuration list for PBXProject "map01" */ = {
+		9CF2FF5918AF32BC00F4DD4F /* Build configuration list for PBXProject "ymap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CF2FF8E18AF32BC00F4DD4F /* Debug */,
@@ -657,7 +659,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CF2FF9018AF32BC00F4DD4F /* Build configuration list for PBXNativeTarget "map01" */ = {
+		9CF2FF9018AF32BC00F4DD4F /* Build configuration list for PBXNativeTarget "ymap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CF2FF9118AF32BC00F4DD4F /* Debug */,
@@ -666,7 +668,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CF2FF9318AF32BC00F4DD4F /* Build configuration list for PBXNativeTarget "map01Tests" */ = {
+		9CF2FF9318AF32BC00F4DD4F /* Build configuration list for PBXNativeTarget "ymapTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CF2FF9418AF32BC00F4DD4F /* Debug */,

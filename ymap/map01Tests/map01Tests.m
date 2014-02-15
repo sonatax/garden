@@ -1,6 +1,6 @@
 //
-//  map01Tests.m
-//  map01Tests
+//  ymapTests.m
+//  ymapTests
 //
 //  Created by mee on 2/15/14.
 //  Copyright (c) 2014 synboo. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface map01Tests : XCTestCase
+@interface ymapTests : XCTestCase
 
 @end
 
-@implementation map01Tests
+@implementation ymapTests
 
 - (void)setUp
 {
