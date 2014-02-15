@@ -20,10 +20,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VUR-bk-8PB" userLabel="subMapView">
+                                <rect key="frame" x="20" y="20" width="127" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="S35-aa-q6d" id="a3g-Ll-sQy"/>
+                        <outlet property="subMapView" destination="VUR-bk-8PB" id="xH0-PB-Ozs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
