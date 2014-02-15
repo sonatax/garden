@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CA05CEB18AFA25B008A793D /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA05CEA18AFA25B008A793D /* TileView.m */; };
+		8CA05CED18AFA470008A793D /* 200.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA05CEC18AFA470008A793D /* 200.png */; };
 		8CDEC8F918AF34AB00EBBCD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC8F818AF34AB00EBBCD3 /* Foundation.framework */; };
 		8CDEC8FB18AF34AB00EBBCD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC8FA18AF34AB00EBBCD3 /* CoreGraphics.framework */; };
 		8CDEC8FD18AF34AB00EBBCD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC8FC18AF34AB00EBBCD3 /* UIKit.framework */; };
@@ -23,12 +25,6 @@
 		8CDEC92418AF34AB00EBBCD3 /* overlayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEC92318AF34AB00EBBCD3 /* overlayTests.m */; };
 		8CDEC92E18AF34D100EBBCD3 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC92D18AF34D100EBBCD3 /* MultipeerConnectivity.framework */; };
 		8CDEC93618AF375900EBBCD3 /* MCSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEC93518AF375900EBBCD3 /* MCSender.m */; };
-		8CDEC94118AF6ED000EBBCD3 /* YMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC94018AF6ED000EBBCD3 /* YMapKit.framework */; };
-		8CDEC94318AF807E00EBBCD3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC94218AF807E00EBBCD3 /* QuartzCore.framework */; };
-		8CDEC94518AF80CE00EBBCD3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC94418AF80CE00EBBCD3 /* OpenGLES.framework */; };
-		8CDEC94718AF80DB00EBBCD3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC94618AF80DB00EBBCD3 /* SystemConfiguration.framework */; };
-		8CDEC94918AF80F900EBBCD3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC94818AF80F900EBBCD3 /* CoreLocation.framework */; };
-		8CDEC94B18AF810900EBBCD3 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC94A18AF810900EBBCD3 /* libxml2.2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8CA05CE918AFA25B008A793D /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
+		8CA05CEA18AFA25B008A793D /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileView.m; sourceTree = "<group>"; };
+		8CA05CEC18AFA470008A793D /* 200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 200.png; sourceTree = "<group>"; };
 		8CDEC8F518AF34AB00EBBCD3 /* overlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = overlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDEC8F818AF34AB00EBBCD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8CDEC8FA18AF34AB00EBBCD3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,12 +63,6 @@
 		8CDEC92D18AF34D100EBBCD3 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		8CDEC93418AF375900EBBCD3 /* MCSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSender.h; sourceTree = "<group>"; };
 		8CDEC93518AF375900EBBCD3 /* MCSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSender.m; sourceTree = "<group>"; };
-		8CDEC94018AF6ED000EBBCD3 /* YMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YMapKit.framework; path = ../ymap/YMapKit.framework; sourceTree = "<group>"; };
-		8CDEC94218AF807E00EBBCD3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		8CDEC94418AF80CE00EBBCD3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		8CDEC94618AF80DB00EBBCD3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		8CDEC94818AF80F900EBBCD3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		8CDEC94A18AF810900EBBCD3 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,15 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CDEC94B18AF810900EBBCD3 /* libxml2.2.dylib in Frameworks */,
-				8CDEC94918AF80F900EBBCD3 /* CoreLocation.framework in Frameworks */,
-				8CDEC94718AF80DB00EBBCD3 /* SystemConfiguration.framework in Frameworks */,
-				8CDEC94518AF80CE00EBBCD3 /* OpenGLES.framework in Frameworks */,
-				8CDEC94318AF807E00EBBCD3 /* QuartzCore.framework in Frameworks */,
 				8CDEC92E18AF34D100EBBCD3 /* MultipeerConnectivity.framework in Frameworks */,
 				8CDEC8FB18AF34AB00EBBCD3 /* CoreGraphics.framework in Frameworks */,
 				8CDEC8FD18AF34AB00EBBCD3 /* UIKit.framework in Frameworks */,
-				8CDEC94118AF6ED000EBBCD3 /* YMapKit.framework in Frameworks */,
 				8CDEC8F918AF34AB00EBBCD3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +93,7 @@
 		8CDEC8EC18AF34AB00EBBCD3 = {
 			isa = PBXGroup;
 			children = (
+				8CA05CEC18AFA470008A793D /* 200.png */,
 				8CDEC8FE18AF34AB00EBBCD3 /* overlay */,
 				8CDEC91D18AF34AB00EBBCD3 /* overlayTests */,
 				8CDEC8F718AF34AB00EBBCD3 /* Frameworks */,
@@ -125,12 +113,6 @@
 		8CDEC8F718AF34AB00EBBCD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8CDEC94A18AF810900EBBCD3 /* libxml2.2.dylib */,
-				8CDEC94818AF80F900EBBCD3 /* CoreLocation.framework */,
-				8CDEC94618AF80DB00EBBCD3 /* SystemConfiguration.framework */,
-				8CDEC94418AF80CE00EBBCD3 /* OpenGLES.framework */,
-				8CDEC94218AF807E00EBBCD3 /* QuartzCore.framework */,
-				8CDEC94018AF6ED000EBBCD3 /* YMapKit.framework */,
 				8CDEC92D18AF34D100EBBCD3 /* MultipeerConnectivity.framework */,
 				8CDEC8F818AF34AB00EBBCD3 /* Foundation.framework */,
 				8CDEC8FA18AF34AB00EBBCD3 /* CoreGraphics.framework */,
@@ -145,6 +127,8 @@
 			children = (
 				8CDEC90718AF34AB00EBBCD3 /* AppDelegate.h */,
 				8CDEC90818AF34AB00EBBCD3 /* AppDelegate.m */,
+				8CA05CE918AFA25B008A793D /* TileView.h */,
+				8CA05CEA18AFA25B008A793D /* TileView.m */,
 				8CDEC90A18AF34AB00EBBCD3 /* Main.storyboard */,
 				8CDEC90D18AF34AB00EBBCD3 /* ViewController.h */,
 				8CDEC90E18AF34AB00EBBCD3 /* ViewController.m */,
@@ -261,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA05CED18AFA470008A793D /* 200.png in Resources */,
 				8CDEC91118AF34AB00EBBCD3 /* Images.xcassets in Resources */,
 				8CDEC90318AF34AB00EBBCD3 /* InfoPlist.strings in Resources */,
 				8CDEC90C18AF34AB00EBBCD3 /* Main.storyboard in Resources */,
@@ -284,6 +269,7 @@
 			files = (
 				8CDEC90F18AF34AB00EBBCD3 /* ViewController.m in Sources */,
 				8CDEC93618AF375900EBBCD3 /* MCSender.m in Sources */,
+				8CA05CEB18AFA25B008A793D /* TileView.m in Sources */,
 				8CDEC90918AF34AB00EBBCD3 /* AppDelegate.m in Sources */,
 				8CDEC90518AF34AB00EBBCD3 /* main.m in Sources */,
 			);

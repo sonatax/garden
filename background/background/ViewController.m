@@ -11,7 +11,11 @@
 
 @interface ViewController () <MCReceiverDelegate>
 @property MCReceiver *receiver;
-@property (weak, nonatomic) IBOutlet UILabel *testLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelLat;
+@property (weak, nonatomic) IBOutlet UILabel *labelLon;
+@property (weak, nonatomic) IBOutlet UILabel *labelSpan;
+
 @end
 
 @implementation ViewController
@@ -49,7 +53,10 @@
 - (void)didReceive:(NSDictionary *)data
 {
     NSLog(@"データ受信: %@", data);
-    _testLabel.text = data[@"time"];
+    _labelLat.text  = data[@"lat"];
+    _labelLon.text  = data[@"lon"];
+    _labelSpan.text = data[@"span"];
+    
 }
 
 @end

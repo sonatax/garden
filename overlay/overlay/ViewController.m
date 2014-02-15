@@ -6,15 +6,19 @@
 //  Copyright (c) 2014年 -. All rights reserved.
 //
 
+//  六本木 35.666 139.731
+
+
 #import "ViewController.h"
 #import "MCSender.h"
-#import <YMapKit/YMapKit.h>
+#import "TileView.h"
 
-@interface ViewController () <MCSenderDelegate, YMKMapViewDelegate>
+@interface ViewController () <MCSenderDelegate, UIScrollViewDelegate>
 
 @property MCSender *sender;
-@property YMKMapView *mapView;
-@property NSTimer  *timer;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property TileView *tile;
 @end
 
 @implementation ViewController
@@ -29,37 +33,15 @@
     _sender.delegate = self;
     [_sender start];
 
-    // 初期位置指定(六本木)
-    CLLocationCoordinate2D center;
-    center.latitude  = 35.666;
-    center.longitude = 139.731;
+    // タイル生成 ここ参考にさせていただいた http://d.hatena.ne.jp/KishikawaKatsumi/20090429/1241020420
+    _tile = [[TileView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 3000.0f, 3000.0f)]; // 全体サイズ
+	_tile.tiledLayer.tileSize = CGSizeMake(200.0f, 200.0f); // タイルサイズ
+	_tile.tiledLayer.levelsOfDetail = 1;
+	_tile.tiledLayer.levelsOfDetailBias = 0;
 
-/*
-    // スクロール＆座標決定のためだけに地図つかう
-    _mapView = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 568) appid:@"dj0zaiZpPTIzMVdVRExhZVl5NCZzPWNvbnN1bWVyc2VjcmV0Jng9NDY-" ];
-    _mapView.delegate = self;
-    _mapView.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.01, 0.01));
-
-    [self.view addSubview:_mapView];
-//    _mapView.alpha = 0.5;  // viewとしては見えなくていい :)
- */
-    
-    //YMKMapViewのインスタンスを作成
-    YMKMapView* map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 320) appid:@"dj0zaiZpPTIzMVdVRExhZVl5NCZzPWNvbnN1bWVyc2VjcmV0Jng9NDY-" ];
-    
-    //地図のタイプを指定 標準の地図を指定
-    map.mapType = YMKMapTypeStandard;
-    
-    //YMKMapViewを追加
-    [self.view addSubview:map];
-    
-    //YMKMapViewDelegateを登録
-    map.delegate = self;
-    
-    //地図の位置と縮尺を設定
-    map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
-    
- 
+    _scrollView.delegate = self;
+    [_scrollView addSubview:_tile];
+    _scrollView.contentSize = _tile.bounds.size;
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,22 +49,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
--(void)getCurrentCenter:(NSTimer*)timer
-{
-//    YMKMapView *mapView = [timer userInfo];
-    
-    CLLocationCoordinate2D center;
-    center = _mapView.centerCoordinate;
-    NSLog(@"regionDidChangeAnimated %f %f", _mapView.centerCoordinate.latitude, _mapView.centerCoordinate.longitude);
-    
-    
-    [_sender send:@{
-                    @"time": [NSString stringWithFormat:@"%f", _mapView.centerCoordinate.latitude]
-                    }];
-}
-
 
 
 
@@ -103,50 +69,65 @@
 }
 
 
-#pragma mark - YMKMapViewDelegate
-/*
-
-// 地図のスワイプ開始時
--(void)mapView:(YMKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
-{
-    NSLog(@"regionWillChangeAnimated");
-    // メインスレッドで監視をループさせる
-    _timer = [NSTimer timerWithTimeInterval:0.1
-                                          target:self
-                                        selector:@selector(getCurrentCenter:)
-//                                        userInfo:mapView
-                                        userInfo:nil
-                                         repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-}
-
-
-// 地図のスワイプ終了時
--(void)mapView:(YMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
-{
-    NSLog(@"regionDidChangeAnimated");
-    [_timer invalidate]; // 監視止める
-
-//    [self getCurrentCenter];
-}
- 
- */
-
 
 - (IBAction)testButton:(id)sender {
-    NSDate *date = [NSDate date];
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    NSString *dateString = [formatter stringFromDate:date];
+    //NSDate *date = [NSDate date];
+    //NSDateFormatter *formatter = [NSDateFormatter new];
+    //formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    //NSString *dateString = [formatter stringFromDate:date];
     
-    // 相手に何か送るのはsendに投げるだけ
+    // 相手に何か送るのは、sendに投げるだけ
     [_sender send:@{
-                    @"time":dateString,
-                    @"hello":@"Hello World!",
+                    @"lat":@"latです",
+                    @"lon":@"lonです",
+                    @"span":@"spanです",
                     }];
 }
 
 
 
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);    
+}
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView;
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+/*
+ 
+ - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView;   // called on finger up as we are moving
+ - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;      // called when scroll view grinds to a halt
+ - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView; // called when setContentOffset/scrollRectVisible:animated: finishes. not called if not animating
+
+ - (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view NS_AVAILABLE_IOS(3_2); // called before the scroll view begins zooming its content
+ - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale; // scale between minimum and maximum. called after any 'bounce' animations
+ 
+ - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView;   // return a yes if you want to scroll to the top. if not defined, assumes YES
+ - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView;      // called when scrolling animation finished. may be called immediately if already at top
+
+ */
 
 @end
