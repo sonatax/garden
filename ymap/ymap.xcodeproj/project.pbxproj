@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8BCD0B1CF92E4346810596F5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC894F501D49EC920CDD43 /* libPods.a */; };
+		9C50E38118B0176F00926B0F /* pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C50E38018B0176F00926B0F /* pin@2x.png */; };
+		9C50E38418B01A8600926B0F /* MPAPIEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E38318B01A8600926B0F /* MPAPIEngine.m */; };
 		9CB338AD18AF957C00D5FF55 /* FTFoursquareCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338A418AF957C00D5FF55 /* FTFoursquareCategory.m */; };
 		9CB338AE18AF957C00D5FF55 /* FTFoursquareLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338A618AF957C00D5FF55 /* FTFoursquareLocation.m */; };
 		9CB338AF18AF957C00D5FF55 /* FTFoursquarePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338A818AF957C00D5FF55 /* FTFoursquarePhoto.m */; };
@@ -76,6 +78,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C50E38018B0176F00926B0F /* pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin@2x.png"; sourceTree = "<group>"; };
+		9C50E38218B01A8600926B0F /* MPAPIEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAPIEngine.h; sourceTree = "<group>"; };
+		9C50E38318B01A8600926B0F /* MPAPIEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAPIEngine.m; sourceTree = "<group>"; };
 		9CB338A318AF957C00D5FF55 /* FTFoursquareCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareCategory.h; sourceTree = "<group>"; };
 		9CB338A418AF957C00D5FF55 /* FTFoursquareCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareCategory.m; sourceTree = "<group>"; };
 		9CB338A518AF957C00D5FF55 /* FTFoursquareLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareLocation.h; sourceTree = "<group>"; };
@@ -182,11 +187,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C50E37F18B0175300926B0F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9C50E38018B0176F00926B0F /* pin@2x.png */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		9CB3389218AF921700D5FF55 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				9CB338B218AF95E700D5FF55 /* FTFoursquareEngine.h */,
 				9CB338B318AF95E700D5FF55 /* FTFoursquareEngine.m */,
+				9C50E38218B01A8600926B0F /* MPAPIEngine.h */,
+				9C50E38318B01A8600926B0F /* MPAPIEngine.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -363,6 +378,7 @@
 		9CF2FFA318AF368800F4DD4F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9C50E37F18B0175300926B0F /* Map */,
 				9CF2002218AF47A900F4DD4F /* Test */,
 				9CF2FFA418AF369D00F4DD4F /* YMapKit */,
 			);
@@ -492,6 +508,7 @@
 				9CF2002A18AF5AFA00F4DD4F /* point01@2x.png in Resources */,
 				9CF2FFBF18AF369D00F4DD4F /* pin_green_s.png in Resources */,
 				9CF2FF6C18AF32BC00F4DD4F /* InfoPlist.strings in Resources */,
+				9C50E38118B0176F00926B0F /* pin@2x.png in Resources */,
 				9CF2FFC118AF369D00F4DD4F /* pin_head_l.png in Resources */,
 				9CF2FFC218AF369D00F4DD4F /* pin_head_s.png in Resources */,
 				9CF2FFBB18AF369D00F4DD4F /* compass48.png in Resources */,
@@ -567,6 +584,7 @@
 				9CF2001F18AF46B400F4DD4F /* UIImage+GIF.m in Sources */,
 				9CB338B018AF957C00D5FF55 /* FTFoursquareVenue.m in Sources */,
 				9CB338AF18AF957C00D5FF55 /* FTFoursquarePhoto.m in Sources */,
+				9C50E38418B01A8600926B0F /* MPAPIEngine.m in Sources */,
 				9CB338AD18AF957C00D5FF55 /* FTFoursquareCategory.m in Sources */,
 				9CF2FF7218AF32BC00F4DD4F /* MPAppDelegate.m in Sources */,
 			);

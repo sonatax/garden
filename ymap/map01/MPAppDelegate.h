@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FTFoursquareEngine.h"
+#import "MPAPIEngine.h"
 
 @interface MPAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -16,5 +17,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) FTFoursquareEngine *foursquareEngine;
 @property (strong, nonatomic) MKNetworkEngine *imageEngine;
+@property (strong, nonatomic) MPAPIEngine *apiEngine;
 
 @end

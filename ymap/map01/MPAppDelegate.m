@@ -16,7 +16,7 @@
     self.imageEngine = [MKNetworkEngine new];
     [self.imageEngine useCache];
     [UIImageView setDefaultEngine:self.imageEngine];
-
+    self.apiEngine = [[MPAPIEngine alloc] initWithHostName:@"210.140.146.93"];
     
     // Override point for customization after application launch.
     return YES;

@@ -42,13 +42,19 @@
 
     
     
-    
-    [AppDelegate.foursquareEngine venuesExploreWithCoordinate:currentCoordinate
-                                                    andRadius:2000
-                                                 onCompletion:^(FTFoursquareVenuesExplore *foursquareVenuesExplore) {
-                                                     [self addAnnotationsWithVenues:foursquareVenuesExplore.venues];
-                                                 } onError:^(NSError *error) {
-                                                 }];
+    // スポット
+//    [AppDelegate.foursquareEngine venuesExploreWithCoordinate:currentCoordinate
+//                                                    andRadius:2000
+//                                                 onCompletion:^(FTFoursquareVenuesExplore *foursquareVenuesExplore) {
+//                                                     [self addAnnotationsWithVenues:foursquareVenuesExplore.venues];
+//                                                 } onError:^(NSError *error) {
+//                                                 }];
+    // 空き室
+    [AppDelegate.apiEngine vacancyWithCoordinate:currentCoordinate
+                                    onCompletion:^(NSArray *array) {
+                                        [self addAnnotationsWithVacancies:array];
+                                    } onError:^(NSError *error) {
+                                    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,17 +73,17 @@
         YMKPinAnnotationView *pin = [[YMKPinAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"Pin"];
         
         //アイコンイメージの変更
-        pin.image=[UIImage imageNamed:@"point01"];
-        NSString *imageUrl = [annotation.foursquareVenue.foursquarePhoto photoUrlWithWidth:30 andHeight:30];
-        [AppDelegate.imageEngine imageAtURL:[NSURL URLWithString:imageUrl]
-                          completionHandler:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
-                              pin.image = fetchedImage;
-                          } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
-                          }];
+        pin.image=[UIImage imageNamed:@"pin"];
+//        NSString *imageUrl = [annotation.foursquareVenue.foursquarePhoto photoUrlWithWidth:30 andHeight:30];
+//        [AppDelegate.imageEngine imageAtURL:[NSURL URLWithString:imageUrl]
+//                          completionHandler:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
+//                              pin.image = fetchedImage;
+//                          } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+//                          }];
         //アイコンのイメージのどこを基準点にするか設定
         CGPoint centerOffset;
-        centerOffset.x=15;
-        centerOffset.y=15;
+        centerOffset.x=40;
+        centerOffset.y=35;
         [pin setCenterOffset:centerOffset];
         
         
@@ -104,10 +110,10 @@
         animationScale.fromValue = [NSNumber numberWithFloat:0.7]; // 開始時の倍率
         animationScale.toValue = [NSNumber numberWithFloat:1.0]; // 終了時の倍率
         // アニメーションを追加
-        [pin.layer addAnimation:animationScale forKey:@"scale-layer"];
+//        [pin.layer addAnimation:animationScale forKey:@"scale-layer"];
         
         // [点滅アニメーション]
-//        [pin.layer addAnimation:[self makeAnimation] forKey:@"blinkAnimation"];
+        [pin.layer addAnimation:[self makeAnimation] forKey:@"blinkAnimation"];
         
         // 丸に切りぬく
 //        pin.layer.cornerRadius = 10;
@@ -124,12 +130,12 @@
     CABasicAnimation *fadeAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
     fadeAnim.fromValue = [NSNumber numberWithFloat:1.0];
     fadeAnim.toValue = [NSNumber numberWithFloat:0.0];
-    fadeAnim.duration = 1.2;
+    fadeAnim.duration = 0.8;
     fadeAnim.fillMode = kCAFillModeForwards;
     
     CABasicAnimation *resizeAnim1 = [CABasicAnimation animationWithKeyPath:@"transform"];
-    resizeAnim1.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.1, 0.1, 0.0)];
-    resizeAnim1.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.5, 0.5, 0.0)];
+    resizeAnim1.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(2.0, 2.0, 0.0)];
+    resizeAnim1.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(5.0, 5.0, 0.0)];
     resizeAnim1.duration = fadeAnim.duration;
     resizeAnim1.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
     resizeAnim1.fillMode = kCAFillModeForwards;
@@ -161,6 +167,19 @@
     }
     
 
+}
+
+- (void)addAnnotationsWithVacancies:(NSArray *)vacancies
+{
+    NSMutableArray *annotations = [@[] mutableCopy];
+    for (NSDictionary *vacancy in vacancies) {
+        //アイコンの緯度経度を設定
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([vacancy[@"Lat"] floatValue], [vacancy[@"Lon"] floatValue]);
+        //MyAnnotationの初期化
+        MPAnnotation *myAnnotation = [[MPAnnotation alloc] initWithLocationCoordinate:coordinate title:vacancy[@"Stock"] subtitle:nil];
+        [annotations addObject:myAnnotation];
+    }
+    [self.yMapView addAnnotations:annotations];
 }
 
 
