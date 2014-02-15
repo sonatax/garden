@@ -53,8 +53,8 @@
     NSLog(@"送ります: %@", params);
     [_mcSession sendData:[NSKeyedArchiver archivedDataWithRootObject:params]
                  toPeers:_mcSession.connectedPeers    // 接続中の相手全てに対して送る
-                withMode:MCSessionSendDataReliable    // キューに登録し確実に届くモード
-//              withMode:MCSessionSendDataUnreliable  // 即時、ただし確実に届くとは限らないモード
+//                withMode:MCSessionSendDataReliable    // キューに登録し確実に届くモード
+              withMode:MCSessionSendDataUnreliable  // 即時、ただし確実に届くとは限らないモード
                    error:nil];
 }
 
