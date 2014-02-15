@@ -21,6 +21,7 @@
 @property NSTimer  *timer;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet MKMapView *subMapView;
 
 
 @end
@@ -47,19 +48,31 @@
     region.center = center;
     region.span.latitudeDelta = 0.01;
     region.span.longitudeDelta = 0.01;
+    [_mapView setRegion:region animated:NO];
     // 地図表示
     _mapView.delegate = self;
-    [_mapView setRegion:region animated:NO];
-    [_mapView setBackgroundColor:[UIColor blackColor]];
     [_mapView setRotateEnabled:NO]; // 回転抑制
-    [_mapView setPitchEnabled:NO]; // バードビュー抑制
+    [_mapView setPitchEnabled:NO];  // バードビュー抑制
     
     // 独自タイルレイヤーかぶせる
-    NSString *template = @"http://i.yimg.jp/images/hackday/ohd2/img/ylogo.png?{z}/{x}/{y}";
+    //  NSString *template = @"http://i.yimg.jp/images/hackday/ohd2/img/ylogo.png?{z}/{x}/{y}";
+    NSString *template = @"http://210.140.146.93/grid.jpg";
+//    NSString *template = @"http://sasama.jp/0205/ptn_grid5.jpg";
+
     MKTileOverlay *overlay = [[MKTileOverlay alloc] initWithURLTemplate:template];
     overlay.canReplaceMapContent = YES;
     [_mapView addOverlay:overlay level:MKOverlayLevelAboveLabels];
 
+    
+    
+    // サブマップ
+    [_subMapView setCenterCoordinate:center animated:NO];
+    [_mapView setRegion:region animated:NO];
+    [_subMapView setRotateEnabled:NO]; // 回転抑制
+    [_subMapView setPitchEnabled:NO];  // バードビュー抑制
+    [_subMapView setScrollEnabled:NO]; // スクロール抑制
+    _subMapView.mapType = MKMapTypeSatellite;
+    _subMapView.alpha = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,13 +87,20 @@
 {
     CLLocationCoordinate2D center;
     center = _mapView.centerCoordinate;
-    NSLog(@"regionDidChangeAnimated %f %f", _mapView.centerCoordinate.latitude, _mapView.centerCoordinate.longitude);
+    NSLog(@"latlon: %f %f", _mapView.centerCoordinate.latitude, _mapView.centerCoordinate.longitude);
+    NSLog(@" %f %f", (float)_mapView.region.span.latitudeDelta, (float)_mapView.region.span.longitudeDelta);
     
     [_sender send:@{
                     @"lat": [NSString stringWithFormat:@"%f", _mapView.centerCoordinate.latitude],
                     @"lon": [NSString stringWithFormat:@"%f", _mapView.centerCoordinate.longitude],
-                    @"span": @"",
+                    @"span": [NSString stringWithFormat:@"%f", (float)_mapView.region.span.longitudeDelta],
                     }];
+    
+    MKCoordinateRegion region = _mapView.region;
+    region.center = center;
+    region.span.latitudeDelta  = _mapView.region.span.latitudeDelta / 15;
+    region.span.longitudeDelta = _mapView.region.span.longitudeDelta / 15;
+    [_subMapView setRegion:region animated:YES];
 }
 
 
@@ -120,15 +140,18 @@
                                 userInfo:nil
                                  repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-    
+
+    _subMapView.alpha = 0;
 }
- 
+
 // 地図のスクロール終了時
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
     NSLog(@"regionDidChangeAnimated");
     [_timer invalidate]; // 監視止める
 //    [self getCurrentCenter];
+
+    _subMapView.alpha = 0.8;
 }
 
 
