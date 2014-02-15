@@ -14,6 +14,7 @@
 		9CB338B018AF957C00D5FF55 /* FTFoursquareVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338AA18AF957C00D5FF55 /* FTFoursquareVenue.m */; };
 		9CB338B118AF957C00D5FF55 /* FTFoursquareVenuesExplore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338AC18AF957C00D5FF55 /* FTFoursquareVenuesExplore.m */; };
 		9CB338B418AF95E700D5FF55 /* FTFoursquareEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338B318AF95E700D5FF55 /* FTFoursquareEngine.m */; };
+		9CB338B718AFA6FA00D5FF55 /* MPOpenWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB338B618AFA6FA00D5FF55 /* MPOpenWindowViewController.m */; };
 		9CF2001A18AF402800F4DD4F /* MPAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF2001918AF402800F4DD4F /* MPAnnotation.m */; };
 		9CF2001F18AF46B400F4DD4F /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF2001E18AF46B400F4DD4F /* UIImage+GIF.m */; };
 		9CF2002118AF46CB00F4DD4F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF2002018AF46CB00F4DD4F /* ImageIO.framework */; };
@@ -87,6 +88,8 @@
 		9CB338AC18AF957C00D5FF55 /* FTFoursquareVenuesExplore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareVenuesExplore.m; sourceTree = "<group>"; };
 		9CB338B218AF95E700D5FF55 /* FTFoursquareEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareEngine.h; sourceTree = "<group>"; };
 		9CB338B318AF95E700D5FF55 /* FTFoursquareEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareEngine.m; sourceTree = "<group>"; };
+		9CB338B518AFA6FA00D5FF55 /* MPOpenWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOpenWindowViewController.h; sourceTree = "<group>"; };
+		9CB338B618AFA6FA00D5FF55 /* MPOpenWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOpenWindowViewController.m; sourceTree = "<group>"; };
 		9CF2001818AF402800F4DD4F /* MPAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAnnotation.h; sourceTree = "<group>"; };
 		9CF2001918AF402800F4DD4F /* MPAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAnnotation.m; sourceTree = "<group>"; };
 		9CF2001D18AF46B400F4DD4F /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 			children = (
 				9CF2FF7618AF32BC00F4DD4F /* MPViewController.h */,
 				9CF2FF7718AF32BC00F4DD4F /* MPViewController.m */,
+				9CB338B518AFA6FA00D5FF55 /* MPOpenWindowViewController.h */,
+				9CB338B618AFA6FA00D5FF55 /* MPOpenWindowViewController.m */,
 				9CF2001818AF402800F4DD4F /* MPAnnotation.h */,
 				9CF2001918AF402800F4DD4F /* MPAnnotation.m */,
 			);
@@ -551,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB338B718AFA6FA00D5FF55 /* MPOpenWindowViewController.m in Sources */,
 				9CB338B418AF95E700D5FF55 /* FTFoursquareEngine.m in Sources */,
 				9CB338AE18AF957C00D5FF55 /* FTFoursquareLocation.m in Sources */,
 				9CB338B118AF957C00D5FF55 /* FTFoursquareVenuesExplore.m in Sources */,

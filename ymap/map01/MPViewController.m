@@ -68,12 +68,12 @@
         
         //アイコンイメージの変更
         pin.image=[UIImage imageNamed:@"point01"];
-//        NSString *imageUrl = [annotation.foursquareVenue.foursquarePhoto photoUrlWithWidth:30 andHeight:30];
-//        [AppDelegate.imageEngine imageAtURL:[NSURL URLWithString:imageUrl]
-//                          completionHandler:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
-//                              pin.image = fetchedImage;
-//                          } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
-//                          }];
+        NSString *imageUrl = [annotation.foursquareVenue.foursquarePhoto photoUrlWithWidth:30 andHeight:30];
+        [AppDelegate.imageEngine imageAtURL:[NSURL URLWithString:imageUrl]
+                          completionHandler:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
+                              pin.image = fetchedImage;
+                          } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+                          }];
         //アイコンのイメージのどこを基準点にするか設定
         CGPoint centerOffset;
         centerOffset.x=15;
@@ -104,11 +104,14 @@
         animationScale.fromValue = [NSNumber numberWithFloat:0.7]; // 開始時の倍率
         animationScale.toValue = [NSNumber numberWithFloat:1.0]; // 終了時の倍率
         // アニメーションを追加
-//        [pin.layer addAnimation:animationScale forKey:@"scale-layer"];
+        [pin.layer addAnimation:animationScale forKey:@"scale-layer"];
         
         // [点滅アニメーション]
-        [pin.layer addAnimation:[self makeAnimation] forKey:@"blinkAnimation"];
+//        [pin.layer addAnimation:[self makeAnimation] forKey:@"blinkAnimation"];
         
+        // 丸に切りぬく
+//        pin.layer.cornerRadius = 10;
+//        pin.layer.masksToBounds = YES;
         
         return pin;
     }
