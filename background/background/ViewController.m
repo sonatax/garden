@@ -76,8 +76,13 @@
     _labelLon.text  = data[@"lon"];
     _labelSpan.text = data[@"span"];
  
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([data[@"lat"] floatValue], [data[@"lon"] floatValue]);
-    [self.yMapView setCenterCoordinate:coordinate animated:YES];
+    CGFloat lat  = [data[@"lat"] floatValue];
+    CGFloat lon  = [data[@"lon"] floatValue];
+    CGFloat span = [data[@"span"] floatValue];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(lat, lon);
+    YMKCoordinateSpan coordinateSpan = YMKCoordinateSpanMake(span, span);
+    YMKCoordinateRegion coordinateRegion = YMKCoordinateRegionMake(coordinate, coordinateSpan);
+    [self.yMapView setRegion:coordinateRegion];
 }
 
 @end
