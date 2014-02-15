@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8CA05CEB18AFA25B008A793D /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA05CEA18AFA25B008A793D /* TileView.m */; };
-		8CA05CED18AFA470008A793D /* 200.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA05CEC18AFA470008A793D /* 200.png */; };
+		8C9D330218AFD71F003FEE76 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9D330118AFD71F003FEE76 /* MapKit.framework */; };
 		8CDEC8F918AF34AB00EBBCD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC8F818AF34AB00EBBCD3 /* Foundation.framework */; };
 		8CDEC8FB18AF34AB00EBBCD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC8FA18AF34AB00EBBCD3 /* CoreGraphics.framework */; };
 		8CDEC8FD18AF34AB00EBBCD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC8FC18AF34AB00EBBCD3 /* UIKit.framework */; };
@@ -25,12 +24,6 @@
 		8CDEC92418AF34AB00EBBCD3 /* overlayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEC92318AF34AB00EBBCD3 /* overlayTests.m */; };
 		8CDEC92E18AF34D100EBBCD3 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC92D18AF34D100EBBCD3 /* MultipeerConnectivity.framework */; };
 		8CDEC93618AF375900EBBCD3 /* MCSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEC93518AF375900EBBCD3 /* MCSender.m */; };
-		9C916AF018AFAC11006E8933 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C916AEF18AFAC11006E8933 /* SystemConfiguration.framework */; };
-		9C916AF218AFAC1E006E8933 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C916AF118AFAC1E006E8933 /* CoreLocation.framework */; };
-		9C916AF418AFAC29006E8933 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C916AF318AFAC29006E8933 /* OpenGLES.framework */; };
-		9C916AF618AFAC3A006E8933 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C916AF518AFAC3A006E8933 /* QuartzCore.framework */; };
-		9C916AF818AFAC43006E8933 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C916AF718AFAC43006E8933 /* libxml2.2.dylib */; };
-		9C916AFA18AFAC6C006E8933 /* YMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C916AF918AFAC6C006E8933 /* YMapKit.framework */; };
 		9C916B1318AFAC86006E8933 /* compass48.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C916AFD18AFAC86006E8933 /* compass48.png */; };
 		9C916B1418AFAC86006E8933 /* compass48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C916AFE18AFAC86006E8933 /* compass48@2x.png */; };
 		9C916B1518AFAC86006E8933 /* goal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C916AFF18AFAC86006E8933 /* goal.png */; };
@@ -66,9 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8CA05CE918AFA25B008A793D /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
-		8CA05CEA18AFA25B008A793D /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileView.m; sourceTree = "<group>"; };
-		8CA05CEC18AFA470008A793D /* 200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 200.png; sourceTree = "<group>"; };
+		8C9D330118AFD71F003FEE76 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8CDEC8F518AF34AB00EBBCD3 /* overlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = overlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDEC8F818AF34AB00EBBCD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8CDEC8FA18AF34AB00EBBCD3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,12 +82,6 @@
 		8CDEC92D18AF34D100EBBCD3 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		8CDEC93418AF375900EBBCD3 /* MCSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSender.h; sourceTree = "<group>"; };
 		8CDEC93518AF375900EBBCD3 /* MCSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSender.m; sourceTree = "<group>"; };
-		9C916AEF18AFAC11006E8933 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		9C916AF118AFAC1E006E8933 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		9C916AF318AFAC29006E8933 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		9C916AF518AFAC3A006E8933 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		9C916AF718AFAC43006E8933 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		9C916AF918AFAC6C006E8933 /* YMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YMapKit.framework; sourceTree = "<group>"; };
 		9C916AFD18AFAC86006E8933 /* compass48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass48.png; sourceTree = "<group>"; };
 		9C916AFE18AFAC86006E8933 /* compass48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compass48@2x.png"; sourceTree = "<group>"; };
 		9C916AFF18AFAC86006E8933 /* goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goal.png; sourceTree = "<group>"; };
@@ -126,15 +111,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C916AF818AFAC43006E8933 /* libxml2.2.dylib in Frameworks */,
-				9C916AF618AFAC3A006E8933 /* QuartzCore.framework in Frameworks */,
-				9C916AF418AFAC29006E8933 /* OpenGLES.framework in Frameworks */,
-				9C916AF218AFAC1E006E8933 /* CoreLocation.framework in Frameworks */,
-				9C916AF018AFAC11006E8933 /* SystemConfiguration.framework in Frameworks */,
+				8C9D330218AFD71F003FEE76 /* MapKit.framework in Frameworks */,
 				8CDEC92E18AF34D100EBBCD3 /* MultipeerConnectivity.framework in Frameworks */,
 				8CDEC8FB18AF34AB00EBBCD3 /* CoreGraphics.framework in Frameworks */,
 				8CDEC8FD18AF34AB00EBBCD3 /* UIKit.framework in Frameworks */,
-				9C916AFA18AFAC6C006E8933 /* YMapKit.framework in Frameworks */,
 				8CDEC8F918AF34AB00EBBCD3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,7 +135,6 @@
 		8CDEC8EC18AF34AB00EBBCD3 = {
 			isa = PBXGroup;
 			children = (
-				8CA05CEC18AFA470008A793D /* 200.png */,
 				8CDEC8FE18AF34AB00EBBCD3 /* overlay */,
 				9C916AFB18AFAC75006E8933 /* Images */,
 				8CDEC91D18AF34AB00EBBCD3 /* overlayTests */,
@@ -176,12 +155,7 @@
 		8CDEC8F718AF34AB00EBBCD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9C916AF918AFAC6C006E8933 /* YMapKit.framework */,
-				9C916AF718AFAC43006E8933 /* libxml2.2.dylib */,
-				9C916AF518AFAC3A006E8933 /* QuartzCore.framework */,
-				9C916AF318AFAC29006E8933 /* OpenGLES.framework */,
-				9C916AF118AFAC1E006E8933 /* CoreLocation.framework */,
-				9C916AEF18AFAC11006E8933 /* SystemConfiguration.framework */,
+				8C9D330118AFD71F003FEE76 /* MapKit.framework */,
 				8CDEC92D18AF34D100EBBCD3 /* MultipeerConnectivity.framework */,
 				8CDEC8F818AF34AB00EBBCD3 /* Foundation.framework */,
 				8CDEC8FA18AF34AB00EBBCD3 /* CoreGraphics.framework */,
@@ -196,8 +170,6 @@
 			children = (
 				8CDEC90718AF34AB00EBBCD3 /* AppDelegate.h */,
 				8CDEC90818AF34AB00EBBCD3 /* AppDelegate.m */,
-				8CA05CE918AFA25B008A793D /* TileView.h */,
-				8CA05CEA18AFA25B008A793D /* TileView.m */,
 				8CDEC90A18AF34AB00EBBCD3 /* Main.storyboard */,
 				8CDEC90D18AF34AB00EBBCD3 /* ViewController.h */,
 				8CDEC90E18AF34AB00EBBCD3 /* ViewController.m */,
@@ -355,7 +327,6 @@
 				9C916B1E18AFAC86006E8933 /* pin_red_s@2x.png in Resources */,
 				9C916B1C18AFAC86006E8933 /* pin_purple_s@2x.png in Resources */,
 				9C916B1318AFAC86006E8933 /* compass48.png in Resources */,
-				8CA05CED18AFA470008A793D /* 200.png in Resources */,
 				9C916B2418AFAC86006E8933 /* route_start_pin.png in Resources */,
 				9C916B2018AFAC86006E8933 /* route_goal_pin.png in Resources */,
 				9C916B1918AFAC86006E8933 /* pin_head_l.png in Resources */,
@@ -398,7 +369,6 @@
 			files = (
 				8CDEC90F18AF34AB00EBBCD3 /* ViewController.m in Sources */,
 				8CDEC93618AF375900EBBCD3 /* MCSender.m in Sources */,
-				8CA05CEB18AFA25B008A793D /* TileView.m in Sources */,
 				8CDEC90918AF34AB00EBBCD3 /* AppDelegate.m in Sources */,
 				8CDEC90518AF34AB00EBBCD3 /* main.m in Sources */,
 			);
