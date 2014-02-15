@@ -36,7 +36,9 @@
     center.latitude = 35.6657214;
     center.longitude = 139.7310058;
     map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.01, 0.01));
-    
+    // [地図の反転]
+    map.transform = CGAffineTransformScale(map.transform, -1, 1);
+
     
     // [Pin]
     //アイコンの緯度経度を設定
@@ -47,9 +49,6 @@
     MPAnnotation *myAnnotation = [[MPAnnotation alloc] initWithLocationCoordinate:coordinate title:@"ミッドタウン" subtitle:@"ミッドタウンです。"];
     //AnnotationをYMKMapViewに追加
     [map addAnnotation:myAnnotation];
-    
-    
-
 }
 
 - (void)didReceiveMemoryWarning

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CF2FF5D18AF32BC00F4DD4F"
-               BuildableName = "map01.app"
+               BuildableName = "ymap.app"
                BlueprintName = "ymap"
                ReferencedContainer = "container:ymap.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CF2FF7E18AF32BC00F4DD4F"
-               BuildableName = "map01Tests.xctest"
+               BuildableName = "ymapTests.xctest"
                BlueprintName = "ymapTests"
                ReferencedContainer = "container:ymap.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CF2FF5D18AF32BC00F4DD4F"
-            BuildableName = "map01.app"
+            BuildableName = "ymap.app"
             BlueprintName = "ymap"
             ReferencedContainer = "container:ymap.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CF2FF5D18AF32BC00F4DD4F"
-            BuildableName = "map01.app"
+            BuildableName = "ymap.app"
             BlueprintName = "ymap"
             ReferencedContainer = "container:ymap.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CF2FF5D18AF32BC00F4DD4F"
-            BuildableName = "map01.app"
+            BuildableName = "ymap.app"
             BlueprintName = "ymap"
             ReferencedContainer = "container:ymap.xcodeproj">
          </BuildableReference>
