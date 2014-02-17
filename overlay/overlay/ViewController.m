@@ -186,9 +186,7 @@
                                       
                                       self.infoView = [[UILabel alloc] initWithFrame:CGRectMake(300, 200, 250, 100)];
                                       self.infoView.backgroundColor = [UIColor clearColor];
-                                      //    self.infoView.backgroundColor = [UIColor magentaColor];
                                       self.infoView.textColor = [UIColor orangeColor];
-                                      //    self.infoView.textColor = [UIColor blackColor];
                                       self.infoView.font = [UIFont systemFontOfSize:12];
                                       self.infoView.textAlignment = NSTextAlignmentCenter;
                                       self.infoView.layer.borderColor = [UIColor orangeColor].CGColor;
