@@ -13,6 +13,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.apiEngine = [[MPAPIEngine alloc] initWithHostName:@"210.140.146.93"];
+
     return YES;
 }
 							

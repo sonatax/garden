@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPAPIEngine.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+#define AppGlobal ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) MPAPIEngine *apiEngine;
 
 @end

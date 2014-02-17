@@ -22,6 +22,8 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet MKMapView *subMapView;
+@property (strong, nonatomic) UILabel *infoView;
+@property (assign, nonatomic) BOOL displayInfoView;
 
 
 @end
@@ -40,8 +42,8 @@
     
     // 中心座標を指定
     CLLocationCoordinate2D center;
-    center.latitude  =  35.666;
-    center.longitude = 139.731;
+    center.latitude  =  35.6325893;
+    center.longitude = 139.8820391;
     [_mapView setCenterCoordinate:center animated:NO];
     // 縮尺指定 (数が小さいほうが拡大)
     MKCoordinateRegion region = _mapView.region;
@@ -132,6 +134,7 @@
 -(void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
 {
     NSLog(@"regionWillChangeAnimated");
+    self.displayInfoView = NO;
     
     // メインスレッドで監視をループさせる
     _timer = [NSTimer timerWithTimeInterval:0.05
@@ -147,13 +150,113 @@
 // 地図のスクロール終了時
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
+    self.displayInfoView = YES;
     NSLog(@"regionDidChangeAnimated");
     [_timer invalidate]; // 監視止める
 //    [self getCurrentCenter];
 
     _subMapView.alpha = 0.8;
+    
+    
+    
+    [self addInfoView];
 }
 
 
+- (void)addInfoView
+{
+    if ( ! self.displayInfoView) {
+        return;
+    }
+    if (self.infoView != nil) {
+        return;
+    }
+    
+    // 空き室
+    [AppGlobal.apiEngine vacancyWithCoordinate:_mapView.centerCoordinate
+                                  onCompletion:^(NSArray *array) {
+                                      if ([array count] == 0) {
+                                          return;
+                                      }
+                                      
+                                      
+                                      NSUInteger randomIndex = arc4random() % [array count];
+                                      NSDictionary *vacant = array[randomIndex];
+                                      
+                                      
+                                      self.infoView = [[UILabel alloc] initWithFrame:CGRectMake(300, 200, 250, 100)];
+                                      self.infoView.backgroundColor = [UIColor clearColor];
+                                      //    self.infoView.backgroundColor = [UIColor magentaColor];
+                                      self.infoView.textColor = [UIColor orangeColor];
+                                      //    self.infoView.textColor = [UIColor blackColor];
+                                      self.infoView.font = [UIFont systemFontOfSize:12];
+                                      self.infoView.textAlignment = NSTextAlignmentCenter;
+                                      self.infoView.layer.borderColor = [UIColor orangeColor].CGColor;
+                                      self.infoView.layer.borderWidth = 3.0;
+                                      self.infoView.numberOfLines = 0;
+                                      
+                                      NSInteger stock = [vacant[@"Stock"] integerValue];
+                                      self.infoView.text = [NSString stringWithFormat:@"%@\n空き室: %ld", vacant[@"Name"], (long)stock];
+                                      
+                                      [self.view addSubview:self.infoView];
+                                      
+                                      [self.infoView.layer addAnimation:[self makeAnimation] forKey:@"openAnimation"];
+                                      
+                                      [UIView animateWithDuration:0.2 delay:3.0 options:UIViewAnimationOptionAllowAnimatedContent animations:^{
+                                          self.infoView.frame = CGRectMake(-300, self.infoView.frame.origin.y, self.infoView.frame.size.width, self.infoView.frame.size.height);
+                                      } completion:^(BOOL finished) {
+                                          [self.infoView removeFromSuperview];
+                                          self.infoView = nil;
+                                      }];
+                                  } onError:^(NSError *error) {
+                                  }];
+
+    
+
+
+}
+
+
+- (CAAnimationGroup *)makeAnimation
+{
+    CABasicAnimation *fadeAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeAnim.fromValue = [NSNumber numberWithFloat:1.0];
+    fadeAnim.toValue = [NSNumber numberWithFloat:1.0];
+    fadeAnim.duration = 0.4;
+    fadeAnim.fillMode = kCAFillModeForwards;
+    
+    CABasicAnimation *resizeAnim1 = [CABasicAnimation animationWithKeyPath:@"transform"];
+    resizeAnim1.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.2, 0.2, 0.0)];
+    resizeAnim1.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0, 1.0, 0.0)];
+    resizeAnim1.duration = fadeAnim.duration;
+    resizeAnim1.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    resizeAnim1.fillMode = kCAFillModeForwards;
+    
+    // y軸に対して回転．（z軸を指定するとUIViewのアニメーションのように回転）
+    CABasicAnimation *rotateAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
+    // アニメーションのオプションを設定
+    rotateAnimation.duration = fadeAnim.duration; // アニメーション速度
+    // 回転角度を設定
+    rotateAnimation.fromValue = [NSNumber numberWithFloat:0.0]; // 開始時の角度
+    rotateAnimation.toValue = [NSNumber numberWithFloat:5 * M_PI]; // 終了時の角度
+    
+    
+    CABasicAnimation *moveAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
+    // 始点と終点を設定
+    moveAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(100, 50)]; // 始点
+    moveAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(300, 200)]; // 終点
+
+    
+    CAAnimationGroup *group = [CAAnimationGroup animation];
+    group.fillMode = kCAFillModeForwards;
+    group.animations = @[fadeAnim, resizeAnim1];
+    group.duration = fadeAnim.duration;
+    group.delegate = self;
+    group.repeatCount = 1;
+    [group setValue:@"showThreadCreateButtonAnimation" forKey:@"animationName"];
+    
+    return group;
+    
+}
 
 @end

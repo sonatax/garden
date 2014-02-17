@@ -13,6 +13,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.apiEngine = [[MPAPIEngine alloc] initWithHostName:@"210.140.146.93"];
+    self.imageEngine = [MKNetworkEngine new];
+    [self.imageEngine useCache];
+    [UIImageView setDefaultEngine:self.imageEngine];
+
     return YES;
 }
 							
