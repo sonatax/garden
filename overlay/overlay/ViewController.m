@@ -85,6 +85,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+# pragma mark - Private methods
 
 //-(void)getCurrentCenter:(NSTimer*)timer
 -(void)getCurrentCenter
@@ -198,10 +199,8 @@
                                           return;
                                       }
                                       
-                                      
                                       NSUInteger randomIndex = arc4random() % [array count];
                                       NSDictionary *vacant = array[randomIndex];
-                                      
                                       
                                       self.infoView = [[UILabel alloc] initWithFrame:CGRectMake(300, 200, 250, 100)];
                                       self.infoView.backgroundColor = [UIColor clearColor];
@@ -216,7 +215,6 @@
                                       self.infoView.text = [NSString stringWithFormat:@"%@\n空き室: %ld", vacant[@"Name"], (long)stock];
                                       
                                       [self.view addSubview:self.infoView];
-                                      
                                       [self.infoView.layer addAnimation:[self makeAnimation] forKey:@"openAnimation"];
                                       
                                       [UIView animateWithDuration:0.2 delay:3.0 options:UIViewAnimationOptionAllowAnimatedContent animations:^{
