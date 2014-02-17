@@ -41,17 +41,17 @@
     self.yMapView = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768) appid:@"dj0zaiZpPTIzMVdVRExhZVl5NCZzPWNvbnN1bWVyc2VjcmV0Jng9NDY-" ];
     //地図のタイプを指定
     [self.yMapView setMapType:YMKMapTypeStyle MapStyle:@"midnight" MapStyleParam:nil];
-    //YMKMapViewを追加
-    [self.view addSubview:self.yMapView];
-    //YMKMapViewDelegateを登録
-    self.yMapView.delegate = self;
     //地図の位置と縮尺を設定
     CLLocationCoordinate2D currentCoordinate = CLLocationCoordinate2DMake(35.6325893, 139.8820391);
     self.yMapView.region = YMKCoordinateRegionMake(currentCoordinate, YMKCoordinateSpanMake(0.01, 0.01));
     //地図の反転
     self.yMapView.transform = CGAffineTransformScale(self.yMapView.transform, -1, 1);
+    //YMKMapViewDelegateを登録
+    self.yMapView.delegate = self;
+    //YMKMapViewを追加
+    [self.view insertSubview:self.yMapView belowSubview:self.connectionStatusView];
     
-    // 写真
+    // お台場の写真
     [AppGlobal.apiEngine photoOnCompletion:^(NSArray *array) {
         [self addAnnotationsWithPhotos:array];
     } onError:^(NSError *error) {
@@ -72,21 +72,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - MCReceiverDelegate
+
 // <MCReceiverDelegate> 接続できた時に呼ばれる
 - (void)didConnected
 {
     NSLog(@"接続成功!");
+    self.connectionStatusView.backgroundColor = [UIColor greenColor];
+}
+
+// <MCReceiverDelegate> 接続が切れた状態から再度接続できた時に呼ばれる
+- (void)didRecoverConnection
+{
+    NSLog(@"接続復帰!");
+    self.connectionStatusView.backgroundColor = [UIColor greenColor];
 }
 
 // <MCReceiverDelegate> 接続切れちゃった時に呼ばれる
 - (void)didLostConnection
 {
     NSLog(@"切れちゃった!");
+    self.connectionStatusView.backgroundColor = [UIColor redColor];
 }
 
 // <MCReceiverDelegate> データが送られてきた時に呼ばれる
 - (void)didReceive:(NSDictionary *)data
 {
+    // 応急処置:接続が繋がっている状態でも、緑にならないことがあるのでここでも緑に
+    self.connectionStatusView.backgroundColor = [UIColor greenColor];
+
     NSLog(@"データ受信: %@", data);
     _labelLat.text  = data[@"lat"];
     _labelLon.text  = data[@"lon"];
@@ -101,40 +115,7 @@
     [self.yMapView setRegion:coordinateRegion];
 }
 
-#pragma mark - Private methods
-
-- (void)addAnnotationsWithVacancies:(NSArray *)vacancies
-{
-    NSMutableArray *annotations = [@[] mutableCopy];
-    for (NSDictionary *vacancy in vacancies) {
-        //アイコンの緯度経度を設定
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([vacancy[@"Lat"] floatValue], [vacancy[@"Lon"] floatValue]);
-        //MyAnnotationの初期化
-        MPAnnotation *myAnnotation = [[MPAnnotation alloc] initWithLocationCoordinate:coordinate title:vacancy[@"Stock"] subtitle:nil];
-        if ( ! [self.addedAnnotationLat containsObject:vacancy[@"Lat"]]) {
-            [annotations addObject:myAnnotation];
-            [self.addedAnnotationLat addObject:vacancy[@"Lat"]];
-        }
-    }
-    [self.yMapView addAnnotations:annotations];
-}
-
-- (void)addAnnotationsWithPhotos:(NSArray *)photos
-{
-    NSMutableArray *annotations = [@[] mutableCopy];
-    for (NSDictionary *photo in photos) {
-        //アイコンの緯度経度を設定
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([photo[@"Lat"] floatValue], [photo[@"Lon"] floatValue]);
-        //MyAnnotationの初期化
-        MPAnnotation *myAnnotation = [[MPAnnotation alloc] initWithLocationCoordinate:coordinate title:nil subtitle:nil];
-        myAnnotation.imageUrl = photo[@"Image"];
-        [annotations addObject:myAnnotation];
-    }
-    [self.yMapView addAnnotations:annotations];
-}
-
-
-#pragma mark - YMap Delegate
+#pragma mark - YMKMapViewDelegate
 
 //Annotation追加イベント
 - (YMKAnnotationView*)mapView:(YMKMapView *)mapView viewForAnnotation:(MPAnnotation*)annotation
@@ -186,9 +167,7 @@
         //        [pin.layer addAnimation:animationScale forKey:@"scale-layer"];
         
         // [点滅アニメーション]
-        if ( ! annotation.imageUrl) {
-            [pin.layer addAnimation:[self makeAnimation] forKey:@"blinkAnimation"];
-        }
+        [pin.layer addAnimation:[self makeAnimation] forKey:@"blinkAnimation"];
         
         return pin;
     }
@@ -205,8 +184,37 @@
 
 }
 
+#pragma mark - Private methods
 
-#pragma mark - animation
+- (void)addAnnotationsWithVacancies:(NSArray *)vacancies
+{
+    NSMutableArray *annotations = [@[] mutableCopy];
+    for (NSDictionary *vacancy in vacancies) {
+        //アイコンの緯度経度を設定
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([vacancy[@"Lat"] floatValue], [vacancy[@"Lon"] floatValue]);
+        //MyAnnotationの初期化
+        MPAnnotation *myAnnotation = [[MPAnnotation alloc] initWithLocationCoordinate:coordinate title:vacancy[@"Stock"] subtitle:nil];
+        if ( ! [self.addedAnnotationLat containsObject:vacancy[@"Lat"]]) {
+            [annotations addObject:myAnnotation];
+            [self.addedAnnotationLat addObject:vacancy[@"Lat"]];
+        }
+    }
+    [self.yMapView addAnnotations:annotations];
+}
+
+- (void)addAnnotationsWithPhotos:(NSArray *)photos
+{
+    NSMutableArray *annotations = [@[] mutableCopy];
+    for (NSDictionary *photo in photos) {
+        //アイコンの緯度経度を設定
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([photo[@"Lat"] floatValue], [photo[@"Lon"] floatValue]);
+        //MyAnnotationの初期化
+        MPAnnotation *myAnnotation = [[MPAnnotation alloc] initWithLocationCoordinate:coordinate title:nil subtitle:nil];
+        myAnnotation.imageUrl = photo[@"Image"];
+        [annotations addObject:myAnnotation];
+    }
+    [self.yMapView addAnnotations:annotations];
+}
 
 - (CAAnimationGroup *)makeAnimation
 {
@@ -234,6 +242,5 @@
     return group;
     
 }
-
 
 @end

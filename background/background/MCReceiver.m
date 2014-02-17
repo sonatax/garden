@@ -74,6 +74,12 @@
     switch ((int)state)
 	{
         case MCSessionStateConnecting:
+            // delegateに、接続が復帰したよ通知
+            if ([self.delegate respondsToSelector:@selector(didConnected)]) {
+                dispatch_async(dispatch_get_main_queue(),^{
+                    [self.delegate didRecoverConnection];
+                });
+            }
             break;
         case MCSessionStateConnected:
             NSLog(@"接続完了 : %@", peerID.displayName);

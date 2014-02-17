@@ -54,6 +54,7 @@
 		9C50E38A18B030BB00926B0F /* MPAPIEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E38918B030BB00926B0F /* MPAPIEngine.m */; };
 		9C50E38D18B0339400926B0F /* MPAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E38C18B0339400926B0F /* MPAnnotation.m */; };
 		9C50E39418B047F900926B0F /* pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C50E39318B047F900926B0F /* pin@2x.png */; };
+		9C59587718B1F06000AD097B /* MainForiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C59587618B1F06000AD097B /* MainForiPad.storyboard */; };
 		C2499C7A9C2444FAB54F8998 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C001FF982464CBFAD29EEB6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,7 @@
 		9C50E38B18B0339400926B0F /* MPAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAnnotation.h; sourceTree = "<group>"; };
 		9C50E38C18B0339400926B0F /* MPAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAnnotation.m; sourceTree = "<group>"; };
 		9C50E39318B047F900926B0F /* pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin@2x.png"; sourceTree = "<group>"; };
+		9C59587618B1F06000AD097B /* MainForiPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainForiPad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,17 +203,18 @@
 		8CDEC8BD18AF33FC00EBBCD3 /* background */ = {
 			isa = PBXGroup;
 			children = (
-				9C50E38718B0309900926B0F /* Network */,
-				9C50E34418AFB86400926B0F /* iPad */,
 				8CDEC8C618AF33FC00EBBCD3 /* AppDelegate.h */,
 				8CDEC8C718AF33FC00EBBCD3 /* AppDelegate.m */,
 				8CDEC8C918AF33FC00EBBCD3 /* Main.storyboard */,
+				9C59587618B1F06000AD097B /* MainForiPad.storyboard */,
 				8CDEC8CC18AF33FC00EBBCD3 /* ViewController.h */,
 				8CDEC8CD18AF33FC00EBBCD3 /* ViewController.m */,
 				8CDEC93718AF381200EBBCD3 /* MCReceiver.h */,
 				8CDEC93818AF381200EBBCD3 /* MCReceiver.m */,
 				9C50E38B18B0339400926B0F /* MPAnnotation.h */,
 				9C50E38C18B0339400926B0F /* MPAnnotation.m */,
+				9C50E38818B030BB00926B0F /* MPAPIEngine.h */,
+				9C50E38918B030BB00926B0F /* MPAPIEngine.m */,
 				8CDEC8CF18AF33FC00EBBCD3 /* Images.xcassets */,
 				8CDEC8BE18AF33FC00EBBCD3 /* Supporting Files */,
 				9C50E34F18AFB8E000926B0F /* Images */,
@@ -246,13 +249,6 @@
 				8CDEC8DF18AF33FC00EBBCD3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9C50E34418AFB86400926B0F /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
 			sourceTree = "<group>";
 		};
 		9C50E34F18AFB8E000926B0F /* Images */ = {
@@ -292,15 +288,6 @@
 			);
 			name = YMap;
 			path = image;
-			sourceTree = "<group>";
-		};
-		9C50E38718B0309900926B0F /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				9C50E38818B030BB00926B0F /* MPAPIEngine.h */,
-				9C50E38918B030BB00926B0F /* MPAPIEngine.m */,
-			);
-			name = Network;
 			sourceTree = "<group>";
 		};
 		9C50E38E18B0361700926B0F /* Map */ = {
@@ -409,6 +396,7 @@
 				9C50E37618AFB90900926B0F /* route_pin.png in Resources */,
 				9C50E37518AFB90900926B0F /* route_goal_pin@2x.png in Resources */,
 				9C50E37918AFB90900926B0F /* route_start_pin@2x.png in Resources */,
+				9C59587718B1F06000AD097B /* MainForiPad.storyboard in Resources */,
 				9C50E37A18AFB90900926B0F /* via.png in Resources */,
 				9C50E37018AFB90900926B0F /* pin_purple_s@2x.png in Resources */,
 				9C50E37C18AFB90900926B0F /* yback.png in Resources */,

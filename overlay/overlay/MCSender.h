@@ -15,6 +15,7 @@
 - (void)didStart;
 - (void)didStop;
 - (void)didConnected;
+- (void)didRecoverConnection;
 - (void)didLostConnection;
 //- (void)didChangeConnectedPeers:(NSArray *)peers;
 @end

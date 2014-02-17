@@ -22,8 +22,10 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet MKMapView *subMapView;
+@property (strong, nonatomic) IBOutlet UIView *connectionStatusView;
 @property (strong, nonatomic) UILabel *infoView;
 @property (assign, nonatomic) BOOL displayInfoView;
+@property (assign, nonatomic) BOOL connected;
 
 
 @end
@@ -113,12 +115,24 @@
 - (void)didConnected
 {
     NSLog(@"接続成功!");
+    self.connected = YES;
+    self.connectionStatusView.backgroundColor = [UIColor greenColor];
+}
+
+// <MCReceiverDelegate> 接続が切れた状態から再度接続できた時に呼ばれる
+- (void)didRecoverConnection
+{
+    NSLog(@"接続復帰!");
+    self.connected = YES;
+    self.connectionStatusView.backgroundColor = [UIColor greenColor];
 }
 
 // <MCSenderDelegate> 接続切れちゃった時に呼ばれる
 - (void)didLostConnection
 {
     NSLog(@"切れちゃった!");
+    self.connected = NO;
+    self.connectionStatusView.backgroundColor = [UIColor redColor];
 }
 
 
@@ -135,6 +149,11 @@
 {
     NSLog(@"regionWillChangeAnimated");
     self.displayInfoView = NO;
+    
+    // Bluetooth接続が切れていたら再度繋ぎにいく
+    if ( ! self.connected) {
+        [_sender start];
+    }
     
     // メインスレッドで監視をループさせる
     _timer = [NSTimer timerWithTimeInterval:0.05
