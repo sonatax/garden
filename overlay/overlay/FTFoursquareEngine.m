@@ -40,8 +40,8 @@
                @"ll"             : ll,
                @"radius"         : [NSString stringWithFormat:@"%ld", (long)radius],
                @"venuePhotos"    : @"1",
-               @"sortByDistance" : @"1",
-               @"limit"          : @"10",
+//               @"sortByDistance" : @"1",
+               @"limit"          : @"1",
             };
     MKNetworkOperation *networkOperation = [self operationWithPath:[NSString stringWithFormat:@"v2/venues/explore"]
                                                             params:params

@@ -36,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.displayInfoView = YES;
     
     // 送信役の起動
     _sender = [MCSender new];
@@ -44,9 +44,8 @@
     [_sender start];
     
     // 中心座標を指定
-    CLLocationCoordinate2D center;
-    center.latitude  =  35.6325893;
-    center.longitude = 139.8820391;
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(35.6325893, 139.8820391); // ディズニーランド
+//    center = CLLocationCoordinate2DMake(35.6316323, 139.7132926); // 目黒
     [_mapView setCenterCoordinate:center animated:NO];
     // 縮尺指定 (数が小さいほうが拡大)
     MKCoordinateRegion region = _mapView.region;
@@ -60,9 +59,8 @@
     [_mapView setPitchEnabled:NO];  // バードビュー抑制
     
     // 独自タイルレイヤーかぶせる
-    //  NSString *template = @"http://i.yimg.jp/images/hackday/ohd2/img/ylogo.png?{z}/{x}/{y}";
-    NSString *template = @"http://210.140.146.93/grid.jpg";
-//    NSString *template = @"http://sasama.jp/0205/ptn_grid5.jpg";
+//    NSString *template = @"http://210.140.146.93/grid.jpg";
+    NSString *template = [[NSURL fileURLWithPath:[[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"grid.jpg"]] absoluteString];
 
     MKTileOverlay *overlay = [[MKTileOverlay alloc] initWithURLTemplate:template];
     overlay.canReplaceMapContent = YES;
@@ -150,7 +148,6 @@
 -(void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
 {
     NSLog(@"regionWillChangeAnimated");
-    self.displayInfoView = NO;
     
     // Bluetooth接続が切れていたら再度繋ぎにいく
     if ( ! self.connected) {
@@ -171,7 +168,6 @@
 // 地図のスクロール終了時
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
-    self.displayInfoView = YES;
     NSLog(@"regionDidChangeAnimated");
     [_timer invalidate]; // 監視止める
 //    [self getCurrentCenter];
@@ -179,8 +175,9 @@
     _subMapView.alpha = 0.8;
     
     
-    
-    [self addInfoView];
+    if (self.displayInfoView) {
+        [self addInfoView];
+    }
 }
 
 
@@ -193,6 +190,7 @@
         return;
     }
     
+    self.displayInfoView = NO;
     // スポット
     [AppGlobal.foursquareEngine venuesExploreWithCoordinate:_mapView.centerCoordinate
                                                   andRadius:5000
@@ -215,7 +213,8 @@
                                                    self.infoView.layer.borderWidth = 3.0;
                                                    self.infoView.numberOfLines = 0;
                                                    
-                                                   self.infoView.text = [NSString stringWithFormat:@"%@\n%@", venue.name, venue.foursquareLocation.address];
+                                                   NSString *address = (venue.foursquareLocation.address == nil) ? @"" : venue.foursquareLocation.address;
+                                                   self.infoView.text = [NSString stringWithFormat:@"%@\n%@", venue.name, address];
                                                    
                                                    [self.view addSubview:self.infoView];
                                                    [self.infoView.layer addAnimation:[self makeAnimation] forKey:@"openAnimation"];
@@ -225,6 +224,7 @@
                                                    } completion:^(BOOL finished) {
                                                        [self.infoView removeFromSuperview];
                                                        self.infoView = nil;
+                                                       self.displayInfoView = YES;
                                                    }];
                                                } onError:^(NSError *error) {
                                                }];

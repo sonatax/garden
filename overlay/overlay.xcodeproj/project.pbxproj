@@ -25,6 +25,7 @@
 		8CDEC92E18AF34D100EBBCD3 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC92D18AF34D100EBBCD3 /* MultipeerConnectivity.framework */; };
 		8CDEC93618AF375900EBBCD3 /* MCSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEC93518AF375900EBBCD3 /* MCSender.m */; };
 		9C50E39718B050E700926B0F /* MPAPIEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E39618B050E700926B0F /* MPAPIEngine.m */; };
+		9C52BF0518B5E93E00245EBE /* grid@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C52BF0418B5E93E00245EBE /* grid@2x.jpg */; };
 		9C5958A518B3580300AD097B /* FTFoursquareCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59589A18B3580300AD097B /* FTFoursquareCategory.m */; };
 		9C5958A618B3580300AD097B /* FTFoursquareEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59589C18B3580300AD097B /* FTFoursquareEngine.m */; };
 		9C5958A718B3580300AD097B /* FTFoursquareLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59589E18B3580300AD097B /* FTFoursquareLocation.m */; };
@@ -70,6 +71,7 @@
 		8CDEC93518AF375900EBBCD3 /* MCSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSender.m; sourceTree = "<group>"; };
 		9C50E39518B050E700926B0F /* MPAPIEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAPIEngine.h; sourceTree = "<group>"; };
 		9C50E39618B050E700926B0F /* MPAPIEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAPIEngine.m; sourceTree = "<group>"; };
+		9C52BF0418B5E93E00245EBE /* grid@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grid@2x.jpg"; sourceTree = "<group>"; };
 		9C59589918B3580300AD097B /* FTFoursquareCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareCategory.h; sourceTree = "<group>"; };
 		9C59589A18B3580300AD097B /* FTFoursquareCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareCategory.m; sourceTree = "<group>"; };
 		9C59589B18B3580300AD097B /* FTFoursquareEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareEngine.h; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				8CDEC91018AF34AB00EBBCD3 /* Images.xcassets */,
 				9C5958AB18B3580700AD097B /* Libraries */,
 				8CDEC8FF18AF34AB00EBBCD3 /* Supporting Files */,
+				9C52BF0318B5E93200245EBE /* Images */,
 			);
 			path = overlay;
 			sourceTree = "<group>";
@@ -193,6 +196,14 @@
 				8CDEC92018AF34AB00EBBCD3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C52BF0318B5E93200245EBE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9C52BF0418B5E93E00245EBE /* grid@2x.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		9C5958AB18B3580700AD097B /* Libraries */ = {
@@ -293,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CDEC91118AF34AB00EBBCD3 /* Images.xcassets in Resources */,
+				9C52BF0518B5E93E00245EBE /* grid@2x.jpg in Resources */,
 				8CDEC90318AF34AB00EBBCD3 /* InfoPlist.strings in Resources */,
 				8CDEC90C18AF34AB00EBBCD3 /* Main.storyboard in Resources */,
 			);
