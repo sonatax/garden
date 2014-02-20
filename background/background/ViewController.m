@@ -10,6 +10,8 @@
 #import "MCReceiver.h"
 #import "MPAnnotation.h"
 #import <YMapKit/YMapKit.h>
+#import "FTFoursquareVenuesExplore.h"
+#import "FTFoursquareVenue.h"
 
 @interface ViewController () <MCReceiverDelegate, YMKMapViewDelegate>
 @property MCReceiver *receiver;
@@ -19,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelSpan;
 @property (strong, nonatomic) YMKMapView *yMapView;
 @property (strong, nonatomic) NSMutableArray *addedAnnotationLat;
+@property (assign, nonatomic) BOOL isLoading;
 
 @end
 
@@ -51,18 +54,13 @@
     //YMKMapViewを追加
     [self.view insertSubview:self.yMapView belowSubview:self.connectionStatusView];
     
-    // お台場の写真
-    [AppGlobal.apiEngine photoOnCompletion:^(NSArray *array) {
-        [self addAnnotationsWithPhotos:array];
-    } onError:^(NSError *error) {
-    }];
-    
-    // 空き室
-    [AppGlobal.apiEngine vacancyWithCoordinate:currentCoordinate
-                                    onCompletion:^(NSArray *array) {
-                                        [self addAnnotationsWithVacancies:array];
-                                    } onError:^(NSError *error) {
-                                    }];
+    // スポット
+    [AppGlobal.foursquareEngine venuesExploreWithCoordinate:currentCoordinate
+                                                  andRadius:2000
+                                               onCompletion:^(FTFoursquareVenuesExplore *foursquareVenuesExplore) {
+                                                   [self addAnnotationsWithVenues:foursquareVenuesExplore.venues];
+                                               } onError:^(NSError *error) {
+                                               }];
 
 }
 
@@ -176,44 +174,38 @@
 
 -(void)mapView:(YMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
-    [AppGlobal.apiEngine vacancyWithCoordinate:self.yMapView.centerCoordinate
-                                  onCompletion:^(NSArray *array) {
-                                      [self addAnnotationsWithVacancies:array];
-                                  } onError:^(NSError *error) {
-                                  }];
-
+    if (self.isLoading) {
+        return;
+    }
+    self.isLoading = YES;
+    [AppGlobal.foursquareEngine venuesExploreWithCoordinate:self.yMapView.centerCoordinate
+                                                  andRadius:2000
+                                               onCompletion:^(FTFoursquareVenuesExplore *foursquareVenuesExplore) {
+                                                   [self addAnnotationsWithVenues:foursquareVenuesExplore.venues];
+                                                   self.isLoading = NO;
+                                               } onError:^(NSError *error) {
+                                               }];
 }
 
 #pragma mark - Private methods
 
-- (void)addAnnotationsWithVacancies:(NSArray *)vacancies
+- (void)addAnnotationsWithVenues:(NSArray *)venues
 {
+    if ([venues count] == 0) {
+        return;
+    }
     NSMutableArray *annotations = [@[] mutableCopy];
-    for (NSDictionary *vacancy in vacancies) {
-        //アイコンの緯度経度を設定
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([vacancy[@"Lat"] floatValue], [vacancy[@"Lon"] floatValue]);
-        //MyAnnotationの初期化
-        MPAnnotation *myAnnotation = [[MPAnnotation alloc] initWithLocationCoordinate:coordinate title:vacancy[@"Stock"] subtitle:nil];
-        if ( ! [self.addedAnnotationLat containsObject:vacancy[@"Lat"]]) {
+    for (FTFoursquareVenue *venue in venues) {
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(venue.foursquareLocation.lat, venue.foursquareLocation.lng);
+        MPAnnotation *myAnnotation = [[MPAnnotation alloc] initWithLocationCoordinate:coordinate title:venue.name subtitle:venue.foursquareLocation.address];
+        NSString *latString = [NSString stringWithFormat:@"%f", venue.foursquareLocation.lat];
+        if ( ! [self.addedAnnotationLat containsObject:latString]) {
             [annotations addObject:myAnnotation];
-            [self.addedAnnotationLat addObject:vacancy[@"Lat"]];
+            [self.yMapView addAnnotation:myAnnotation];
+            [self.addedAnnotationLat addObject:latString];
         }
     }
-    [self.yMapView addAnnotations:annotations];
-}
-
-- (void)addAnnotationsWithPhotos:(NSArray *)photos
-{
-    NSMutableArray *annotations = [@[] mutableCopy];
-    for (NSDictionary *photo in photos) {
-        //アイコンの緯度経度を設定
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([photo[@"Lat"] floatValue], [photo[@"Lon"] floatValue]);
-        //MyAnnotationの初期化
-        MPAnnotation *myAnnotation = [[MPAnnotation alloc] initWithLocationCoordinate:coordinate title:nil subtitle:nil];
-        myAnnotation.imageUrl = photo[@"Image"];
-        [annotations addObject:myAnnotation];
-    }
-    [self.yMapView addAnnotations:annotations];
+//    [self.yMapView addAnnotations:annotations];
 }
 
 - (CAAnimationGroup *)makeAnimation
@@ -240,7 +232,6 @@
     [group setValue:@"showThreadCreateButtonAnimation" forKey:@"animationName"];
     
     return group;
-    
 }
 
 @end

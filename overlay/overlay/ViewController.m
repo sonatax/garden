@@ -12,7 +12,8 @@
 #import "ViewController.h"
 #import "MCSender.h"
 #import <MapKit/MapKit.h>
-
+#import "FTFoursquareVenuesExplore.h"
+#import "FTFoursquareVenue.h"
 
 
 @interface ViewController () <MCSenderDelegate, MKMapViewDelegate>
@@ -192,42 +193,41 @@
         return;
     }
     
-    // 空き室
-    [AppGlobal.apiEngine vacancyWithCoordinate:_mapView.centerCoordinate
-                                  onCompletion:^(NSArray *array) {
-                                      if ([array count] == 0) {
-                                          return;
-                                      }
-                                      
-                                      NSUInteger randomIndex = arc4random() % [array count];
-                                      NSDictionary *vacant = array[randomIndex];
-                                      
-                                      self.infoView = [[UILabel alloc] initWithFrame:CGRectMake(300, 200, 250, 100)];
-                                      self.infoView.backgroundColor = [UIColor clearColor];
-                                      self.infoView.textColor = [UIColor orangeColor];
-                                      self.infoView.font = [UIFont systemFontOfSize:12];
-                                      self.infoView.textAlignment = NSTextAlignmentCenter;
-                                      self.infoView.layer.borderColor = [UIColor orangeColor].CGColor;
-                                      self.infoView.layer.borderWidth = 3.0;
-                                      self.infoView.numberOfLines = 0;
-                                      
-                                      NSInteger stock = [vacant[@"Stock"] integerValue];
-                                      self.infoView.text = [NSString stringWithFormat:@"%@\n空き室: %ld", vacant[@"Name"], (long)stock];
-                                      
-                                      [self.view addSubview:self.infoView];
-                                      [self.infoView.layer addAnimation:[self makeAnimation] forKey:@"openAnimation"];
-                                      
-                                      [UIView animateWithDuration:0.2 delay:3.0 options:UIViewAnimationOptionAllowAnimatedContent animations:^{
-                                          self.infoView.frame = CGRectMake(-300, self.infoView.frame.origin.y, self.infoView.frame.size.width, self.infoView.frame.size.height);
-                                      } completion:^(BOOL finished) {
-                                          [self.infoView removeFromSuperview];
-                                          self.infoView = nil;
-                                      }];
-                                  } onError:^(NSError *error) {
-                                  }];
-
-    
-
+    // スポット
+    [AppGlobal.foursquareEngine venuesExploreWithCoordinate:_mapView.centerCoordinate
+                                                  andRadius:5000
+                                               onCompletion:^(FTFoursquareVenuesExplore *foursquareVenuesExplore) {
+                                                   NSArray *array = foursquareVenuesExplore.venues;
+                                                   
+                                                   if ([array count] == 0) {
+                                                       return;
+                                                   }
+                                                   
+                                                   NSUInteger randomIndex = arc4random() % [array count];
+                                                   FTFoursquareVenue *venue = array[randomIndex];
+                                                   
+                                                   self.infoView = [[UILabel alloc] initWithFrame:CGRectMake(300, 200, 250, 100)];
+                                                   self.infoView.backgroundColor = [UIColor clearColor];
+                                                   self.infoView.textColor = [UIColor orangeColor];
+                                                   self.infoView.font = [UIFont systemFontOfSize:12];
+                                                   self.infoView.textAlignment = NSTextAlignmentCenter;
+                                                   self.infoView.layer.borderColor = [UIColor orangeColor].CGColor;
+                                                   self.infoView.layer.borderWidth = 3.0;
+                                                   self.infoView.numberOfLines = 0;
+                                                   
+                                                   self.infoView.text = [NSString stringWithFormat:@"%@\n%@", venue.name, venue.foursquareLocation.address];
+                                                   
+                                                   [self.view addSubview:self.infoView];
+                                                   [self.infoView.layer addAnimation:[self makeAnimation] forKey:@"openAnimation"];
+                                                   
+                                                   [UIView animateWithDuration:0.2 delay:3.0 options:UIViewAnimationOptionAllowAnimatedContent animations:^{
+                                                       self.infoView.frame = CGRectMake(-300, self.infoView.frame.origin.y, self.infoView.frame.size.width, self.infoView.frame.size.height);
+                                                   } completion:^(BOOL finished) {
+                                                       [self.infoView removeFromSuperview];
+                                                       self.infoView = nil;
+                                                   }];
+                                               } onError:^(NSError *error) {
+                                               }];
 
 }
 

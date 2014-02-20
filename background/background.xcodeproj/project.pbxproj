@@ -55,6 +55,13 @@
 		9C50E38D18B0339400926B0F /* MPAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E38C18B0339400926B0F /* MPAnnotation.m */; };
 		9C50E39418B047F900926B0F /* pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C50E39318B047F900926B0F /* pin@2x.png */; };
 		9C59587718B1F06000AD097B /* MainForiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C59587618B1F06000AD097B /* MainForiPad.storyboard */; };
+		9C59588118B3349A00AD097B /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59588018B3349A00AD097B /* XMLReader.m */; };
+		9C59589318B3541200AD097B /* FTFoursquareCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59588818B3541200AD097B /* FTFoursquareCategory.m */; };
+		9C59589418B3541200AD097B /* FTFoursquareEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59588A18B3541200AD097B /* FTFoursquareEngine.m */; };
+		9C59589518B3541200AD097B /* FTFoursquareLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59588C18B3541200AD097B /* FTFoursquareLocation.m */; };
+		9C59589618B3541200AD097B /* FTFoursquarePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59588E18B3541200AD097B /* FTFoursquarePhoto.m */; };
+		9C59589718B3541200AD097B /* FTFoursquareVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59589018B3541200AD097B /* FTFoursquareVenue.m */; };
+		9C59589818B3541200AD097B /* FTFoursquareVenuesExplore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59589218B3541200AD097B /* FTFoursquareVenuesExplore.m */; };
 		C2499C7A9C2444FAB54F8998 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C001FF982464CBFAD29EEB6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +134,20 @@
 		9C50E38C18B0339400926B0F /* MPAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAnnotation.m; sourceTree = "<group>"; };
 		9C50E39318B047F900926B0F /* pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin@2x.png"; sourceTree = "<group>"; };
 		9C59587618B1F06000AD097B /* MainForiPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainForiPad.storyboard; sourceTree = "<group>"; };
+		9C59587F18B3349A00AD097B /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		9C59588018B3349A00AD097B /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		9C59588718B3541200AD097B /* FTFoursquareCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareCategory.h; sourceTree = "<group>"; };
+		9C59588818B3541200AD097B /* FTFoursquareCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareCategory.m; sourceTree = "<group>"; };
+		9C59588918B3541200AD097B /* FTFoursquareEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareEngine.h; sourceTree = "<group>"; };
+		9C59588A18B3541200AD097B /* FTFoursquareEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareEngine.m; sourceTree = "<group>"; };
+		9C59588B18B3541200AD097B /* FTFoursquareLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareLocation.h; sourceTree = "<group>"; };
+		9C59588C18B3541200AD097B /* FTFoursquareLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareLocation.m; sourceTree = "<group>"; };
+		9C59588D18B3541200AD097B /* FTFoursquarePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquarePhoto.h; sourceTree = "<group>"; };
+		9C59588E18B3541200AD097B /* FTFoursquarePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquarePhoto.m; sourceTree = "<group>"; };
+		9C59588F18B3541200AD097B /* FTFoursquareVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareVenue.h; sourceTree = "<group>"; };
+		9C59589018B3541200AD097B /* FTFoursquareVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareVenue.m; sourceTree = "<group>"; };
+		9C59589118B3541200AD097B /* FTFoursquareVenuesExplore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareVenuesExplore.h; sourceTree = "<group>"; };
+		9C59589218B3541200AD097B /* FTFoursquareVenuesExplore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareVenuesExplore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +237,7 @@
 				9C50E38818B030BB00926B0F /* MPAPIEngine.h */,
 				9C50E38918B030BB00926B0F /* MPAPIEngine.m */,
 				8CDEC8CF18AF33FC00EBBCD3 /* Images.xcassets */,
+				9C59587E18B3348F00AD097B /* Libraries */,
 				8CDEC8BE18AF33FC00EBBCD3 /* Supporting Files */,
 				9C50E34F18AFB8E000926B0F /* Images */,
 			);
@@ -296,6 +318,44 @@
 				9C50E39318B047F900926B0F /* pin@2x.png */,
 			);
 			name = Map;
+			sourceTree = "<group>";
+		};
+		9C59587E18B3348F00AD097B /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				9C59588618B353FA00AD097B /* Foursquare */,
+				9C59588518B353EF00AD097B /* XMLReader */,
+			);
+			name = Libraries;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		9C59588518B353EF00AD097B /* XMLReader */ = {
+			isa = PBXGroup;
+			children = (
+				9C59587F18B3349A00AD097B /* XMLReader.h */,
+				9C59588018B3349A00AD097B /* XMLReader.m */,
+			);
+			name = XMLReader;
+			sourceTree = "<group>";
+		};
+		9C59588618B353FA00AD097B /* Foursquare */ = {
+			isa = PBXGroup;
+			children = (
+				9C59588918B3541200AD097B /* FTFoursquareEngine.h */,
+				9C59588A18B3541200AD097B /* FTFoursquareEngine.m */,
+				9C59588718B3541200AD097B /* FTFoursquareCategory.h */,
+				9C59588818B3541200AD097B /* FTFoursquareCategory.m */,
+				9C59588B18B3541200AD097B /* FTFoursquareLocation.h */,
+				9C59588C18B3541200AD097B /* FTFoursquareLocation.m */,
+				9C59588D18B3541200AD097B /* FTFoursquarePhoto.h */,
+				9C59588E18B3541200AD097B /* FTFoursquarePhoto.m */,
+				9C59588F18B3541200AD097B /* FTFoursquareVenue.h */,
+				9C59589018B3541200AD097B /* FTFoursquareVenue.m */,
+				9C59589118B3541200AD097B /* FTFoursquareVenuesExplore.h */,
+				9C59589218B3541200AD097B /* FTFoursquareVenuesExplore.m */,
+			);
+			name = Foursquare;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,8 +518,15 @@
 				8CDEC93918AF381200EBBCD3 /* MCReceiver.m in Sources */,
 				8CDEC8C818AF33FC00EBBCD3 /* AppDelegate.m in Sources */,
 				9C50E38D18B0339400926B0F /* MPAnnotation.m in Sources */,
+				9C59589718B3541200AD097B /* FTFoursquareVenue.m in Sources */,
+				9C59589818B3541200AD097B /* FTFoursquareVenuesExplore.m in Sources */,
 				9C50E38A18B030BB00926B0F /* MPAPIEngine.m in Sources */,
 				8CDEC8C418AF33FC00EBBCD3 /* main.m in Sources */,
+				9C59589618B3541200AD097B /* FTFoursquarePhoto.m in Sources */,
+				9C59589418B3541200AD097B /* FTFoursquareEngine.m in Sources */,
+				9C59589518B3541200AD097B /* FTFoursquareLocation.m in Sources */,
+				9C59589318B3541200AD097B /* FTFoursquareCategory.m in Sources */,
+				9C59588118B3349A00AD097B /* XMLReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

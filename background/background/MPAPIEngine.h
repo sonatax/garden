@@ -16,7 +16,7 @@ typedef void (^MPArrayResponseBlock)(NSArray *array);
 - (MKNetworkOperation *)vacancyWithCoordinate:(CLLocationCoordinate2D)coordinate
                                  onCompletion:(MPArrayResponseBlock)completionBlock
                                       onError:(MKNKErrorBlock)errorBlock;
-- (MKNetworkOperation *)photoOnCompletion:(MPArrayResponseBlock)completionBlock
-                                  onError:(MKNKErrorBlock)errorBlock;
+//- (MKNetworkOperation *)photoOnCompletion:(MPArrayResponseBlock)completionBlock
+//                                  onError:(MKNKErrorBlock)errorBlock;
 
 @end

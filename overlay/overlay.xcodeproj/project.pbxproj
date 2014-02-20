@@ -25,6 +25,12 @@
 		8CDEC92E18AF34D100EBBCD3 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDEC92D18AF34D100EBBCD3 /* MultipeerConnectivity.framework */; };
 		8CDEC93618AF375900EBBCD3 /* MCSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDEC93518AF375900EBBCD3 /* MCSender.m */; };
 		9C50E39718B050E700926B0F /* MPAPIEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E39618B050E700926B0F /* MPAPIEngine.m */; };
+		9C5958A518B3580300AD097B /* FTFoursquareCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59589A18B3580300AD097B /* FTFoursquareCategory.m */; };
+		9C5958A618B3580300AD097B /* FTFoursquareEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59589C18B3580300AD097B /* FTFoursquareEngine.m */; };
+		9C5958A718B3580300AD097B /* FTFoursquareLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59589E18B3580300AD097B /* FTFoursquareLocation.m */; };
+		9C5958A818B3580300AD097B /* FTFoursquarePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5958A018B3580300AD097B /* FTFoursquarePhoto.m */; };
+		9C5958A918B3580300AD097B /* FTFoursquareVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5958A218B3580300AD097B /* FTFoursquareVenue.m */; };
+		9C5958AA18B3580300AD097B /* FTFoursquareVenuesExplore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5958A418B3580300AD097B /* FTFoursquareVenuesExplore.m */; };
 		CAF74B8641C44465BBED57F7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B99609DC434216A95A3B1A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +70,18 @@
 		8CDEC93518AF375900EBBCD3 /* MCSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSender.m; sourceTree = "<group>"; };
 		9C50E39518B050E700926B0F /* MPAPIEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAPIEngine.h; sourceTree = "<group>"; };
 		9C50E39618B050E700926B0F /* MPAPIEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAPIEngine.m; sourceTree = "<group>"; };
+		9C59589918B3580300AD097B /* FTFoursquareCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareCategory.h; sourceTree = "<group>"; };
+		9C59589A18B3580300AD097B /* FTFoursquareCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareCategory.m; sourceTree = "<group>"; };
+		9C59589B18B3580300AD097B /* FTFoursquareEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareEngine.h; sourceTree = "<group>"; };
+		9C59589C18B3580300AD097B /* FTFoursquareEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareEngine.m; sourceTree = "<group>"; };
+		9C59589D18B3580300AD097B /* FTFoursquareLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareLocation.h; sourceTree = "<group>"; };
+		9C59589E18B3580300AD097B /* FTFoursquareLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareLocation.m; sourceTree = "<group>"; };
+		9C59589F18B3580300AD097B /* FTFoursquarePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquarePhoto.h; sourceTree = "<group>"; };
+		9C5958A018B3580300AD097B /* FTFoursquarePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquarePhoto.m; sourceTree = "<group>"; };
+		9C5958A118B3580300AD097B /* FTFoursquareVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareVenue.h; sourceTree = "<group>"; };
+		9C5958A218B3580300AD097B /* FTFoursquareVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareVenue.m; sourceTree = "<group>"; };
+		9C5958A318B3580300AD097B /* FTFoursquareVenuesExplore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareVenuesExplore.h; sourceTree = "<group>"; };
+		9C5958A418B3580300AD097B /* FTFoursquareVenuesExplore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareVenuesExplore.m; sourceTree = "<group>"; };
 		DAF9FD86C3184A45A12678E8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E3B99609DC434216A95A3B1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -142,6 +160,7 @@
 				9C50E39518B050E700926B0F /* MPAPIEngine.h */,
 				9C50E39618B050E700926B0F /* MPAPIEngine.m */,
 				8CDEC91018AF34AB00EBBCD3 /* Images.xcassets */,
+				9C5958AB18B3580700AD097B /* Libraries */,
 				8CDEC8FF18AF34AB00EBBCD3 /* Supporting Files */,
 			);
 			path = overlay;
@@ -174,6 +193,25 @@
 				8CDEC92018AF34AB00EBBCD3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C5958AB18B3580700AD097B /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				9C59589B18B3580300AD097B /* FTFoursquareEngine.h */,
+				9C59589C18B3580300AD097B /* FTFoursquareEngine.m */,
+				9C59589918B3580300AD097B /* FTFoursquareCategory.h */,
+				9C59589A18B3580300AD097B /* FTFoursquareCategory.m */,
+				9C59589D18B3580300AD097B /* FTFoursquareLocation.h */,
+				9C59589E18B3580300AD097B /* FTFoursquareLocation.m */,
+				9C59589F18B3580300AD097B /* FTFoursquarePhoto.h */,
+				9C5958A018B3580300AD097B /* FTFoursquarePhoto.m */,
+				9C5958A118B3580300AD097B /* FTFoursquareVenue.h */,
+				9C5958A218B3580300AD097B /* FTFoursquareVenue.m */,
+				9C5958A318B3580300AD097B /* FTFoursquareVenuesExplore.h */,
+				9C5958A418B3580300AD097B /* FTFoursquareVenuesExplore.m */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,9 +347,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CDEC90F18AF34AB00EBBCD3 /* ViewController.m in Sources */,
+				9C5958A718B3580300AD097B /* FTFoursquareLocation.m in Sources */,
+				9C5958A818B3580300AD097B /* FTFoursquarePhoto.m in Sources */,
+				9C5958AA18B3580300AD097B /* FTFoursquareVenuesExplore.m in Sources */,
 				8CDEC93618AF375900EBBCD3 /* MCSender.m in Sources */,
 				8CDEC90918AF34AB00EBBCD3 /* AppDelegate.m in Sources */,
 				9C50E39718B050E700926B0F /* MPAPIEngine.m in Sources */,
+				9C5958A518B3580300AD097B /* FTFoursquareCategory.m in Sources */,
+				9C5958A618B3580300AD097B /* FTFoursquareEngine.m in Sources */,
+				9C5958A918B3580300AD097B /* FTFoursquareVenue.m in Sources */,
 				8CDEC90518AF34AB00EBBCD3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

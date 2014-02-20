@@ -18,9 +18,9 @@ typedef void (^FTFoursquareVenueResponseBlock)(FTFoursquareVenue *foursquareVenu
                                           andRadius:(NSInteger)radius
                                        onCompletion:(FTFoursquareVenuesExploreResponseBlock)completionBlock
                                             onError:(MKNKErrorBlock)errorBlock;
-- (MKNetworkOperation *)venuesWithVenueId:(NSString *)venueId
-                             onCompletion:(FTFoursquareVenueResponseBlock)completionBlock
-                                  onError:(MKNKErrorBlock)errorBlock;
+//- (MKNetworkOperation *)venuesWithVenueId:(NSString *)venueId
+//                             onCompletion:(FTFoursquareVenueResponseBlock)completionBlock
+//                                  onError:(MKNKErrorBlock)errorBlock;
 //- (MKNetworkOperation *)venuesPhotosWithVenueId:(NSString *)venueId
 //                                       andLimit:(NSInteger)limit
 //                                   onCompletion:(FTArrayResponseBlock)completionBlock
