@@ -124,7 +124,7 @@
         YMKPinAnnotationView *pin = [[YMKPinAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"Pin"];
         
         //アイコンイメージの変更
-        pin.image=[UIImage imageNamed:@"pin"];
+        pin.image=[UIImage imageNamed:@"pin-pink"];
 //        if (annotation.imageUrl) {
 //            [AppGlobal.imageEngine imageAtURL:[NSURL URLWithString:annotation.imageUrl]
 //                            completionHandler:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {

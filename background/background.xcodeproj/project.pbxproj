@@ -62,6 +62,7 @@
 		9C59589618B3541200AD097B /* FTFoursquarePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59588E18B3541200AD097B /* FTFoursquarePhoto.m */; };
 		9C59589718B3541200AD097B /* FTFoursquareVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59589018B3541200AD097B /* FTFoursquareVenue.m */; };
 		9C59589818B3541200AD097B /* FTFoursquareVenuesExplore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C59589218B3541200AD097B /* FTFoursquareVenuesExplore.m */; };
+		9CB7B4DF18B7453D00C973A1 /* pin-pink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7B4DE18B7453D00C973A1 /* pin-pink@2x.png */; };
 		C2499C7A9C2444FAB54F8998 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C001FF982464CBFAD29EEB6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +149,7 @@
 		9C59589018B3541200AD097B /* FTFoursquareVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareVenue.m; sourceTree = "<group>"; };
 		9C59589118B3541200AD097B /* FTFoursquareVenuesExplore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFoursquareVenuesExplore.h; sourceTree = "<group>"; };
 		9C59589218B3541200AD097B /* FTFoursquareVenuesExplore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFoursquareVenuesExplore.m; sourceTree = "<group>"; };
+		9CB7B4DE18B7453D00C973A1 /* pin-pink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin-pink@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				9C50E39318B047F900926B0F /* pin@2x.png */,
+				9CB7B4DE18B7453D00C973A1 /* pin-pink@2x.png */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				9C50E37B18AFB90900926B0F /* via@2x.png in Resources */,
 				9C50E37718AFB90900926B0F /* route_pin@2x.png in Resources */,
 				9C50E36918AFB90900926B0F /* goal.png in Resources */,
+				9CB7B4DF18B7453D00C973A1 /* pin-pink@2x.png in Resources */,
 				9C50E36B18AFB90900926B0F /* pin_green_s.png in Resources */,
 				8CDEC8C218AF33FC00EBBCD3 /* InfoPlist.strings in Resources */,
 				9C50E39418B047F900926B0F /* pin@2x.png in Resources */,
