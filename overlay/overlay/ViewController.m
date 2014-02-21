@@ -59,8 +59,7 @@
     [_mapView setPitchEnabled:NO];  // バードビュー抑制
     
     // 独自タイルレイヤーかぶせる
-//    NSString *template = @"http://210.140.146.93/grid.jpg";
-    NSString *template = [[NSURL fileURLWithPath:[[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"grid.jpg"]] absoluteString];
+    NSString *template = [[NSURL fileURLWithPath:[[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"grid@2x.jpg"]] absoluteString];
 
     MKTileOverlay *overlay = [[MKTileOverlay alloc] initWithURLTemplate:template];
     overlay.canReplaceMapContent = YES;
